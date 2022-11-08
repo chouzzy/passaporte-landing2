@@ -68,7 +68,6 @@ export function VisaModal({isOpen, onClose, data}:VisaModalProps) {
                         </Text>
                     </Flex>
 
-
                 </VStack>
             </Box>
             </Collapse >
