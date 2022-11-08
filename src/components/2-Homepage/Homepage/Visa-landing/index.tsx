@@ -59,8 +59,6 @@ export function VisaLanding() {
                                        <GridItem 
                                        key={visaItem.id}
                                        onClick={() => {handleVisaDetails(visaItem)}}
-                                       alignItems= 'center'
-                                       justifyContent= 'center'
                                        bgColor='clubDark'
                                        bgImage={visaItem.backgroundSource}
                                        bgPosition='center'
@@ -72,13 +70,17 @@ export function VisaLanding() {
                                           transition: '1000ms',
                                           cursor: 'pointer'
                                        }}
-                                       h={[32,32,32,24]}
+                                       h={[16,32,32,24]}
+                                       
                                        >
-                                          <VStack spacing={6} p={8}>
-                                             <Text w='100%'
+                                          <VStack spacing={6} h='100%' p={[2,4,8,8]} >
+                                             <Text 
+                                                w='100%'
+                                                my='auto'
+                                                
                                                 color='white'
                                                 fontWeight={400}
-                                                fontSize='1rem'
+                                                fontSize={'1rem'}
                                              > 
                                              {visaItem.name} 
                                              </Text>
