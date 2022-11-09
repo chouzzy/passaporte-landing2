@@ -14,7 +14,7 @@ const feedbacks = [
     'O Clube do Passaporte foi uma ótima surpresa em meus planos de obter um visto para morar em Portugal. Desde o primeiro momento sempre agiram com transparência e atenderam com cordialidade, conduzindo o processo de maneira eficiente, permitindo que eu tivesse meu visto de forma célere e sem nenhum tipo de contratempo.'
 ]
 
-const feedbackTitle =  <Heading mx='auto' fontWeight='300' fontSize='1.6rem' color='gray.900'> 
+const feedbackTitle =  <Heading mx='auto' fontWeight='300' fontSize='1.6rem' color='gray.900' textAlign={'center'}> 
         Relatos de  <b style={{color:'#1c928b'}}> nossos clientes</b>
     </Heading>
 
@@ -30,7 +30,7 @@ const lines = [
     const slides = useBreakpointValue({ base: 1, sm: 1, md: 2, lg: 3, xl: 3 })
     
     return (
-      <Flex id='#feedbacks'w='100%' bg='gray.50' flexDir='column' gap={8} py={[8,8,8,8]} px={[8,8,8,8]} color='gray.50'>
+      <Flex id='#feedbacks' w='100%' bg='gray.50' flexDir='column' gap={8} py={[8,8,8,8]} px={[8,8,8,8]} color='gray.50'>
          <Flex w='100%'>
             {feedbackTitle}
          </Flex>
