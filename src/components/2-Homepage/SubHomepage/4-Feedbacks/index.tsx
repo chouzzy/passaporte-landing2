@@ -30,7 +30,7 @@ const lines = [
     const slides = useBreakpointValue({ base: 1, sm: 1, md: 2, lg: 3, xl: 3 })
     
     return (
-      <Flex id='#feedbacks' w='100%' bg='gray.50' flexDir='column' gap={8} py={[8,8,8,8]} px={[8,8,8,8]} color='gray.50'>
+      <Flex id='#feedbacks' w='100%' bg='gray.50' flexDir='column' gap={8} py={[8,8,8,8]} px={[2,8,8,8]} color='gray.50'>
          <Flex w='100%'>
             {feedbackTitle}
          </Flex>
