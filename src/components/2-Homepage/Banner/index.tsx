@@ -1,4 +1,4 @@
-import { Flex, Text } from "@chakra-ui/react";
+import { Flex, Heading, Text } from "@chakra-ui/react";
 import { useState } from "react";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
@@ -36,7 +36,10 @@ export function Banner() {
    return (
       <Flex w='100%' h='100%'>
          <Flex maxW={'100%'} h='100%' zIndex='0'>
-            <Swiper
+            <Heading color='white'>
+               Essa é a chance de ouro para morar em um país de 1º Mundo
+            </Heading>
+            {/* <Swiper
                spaceBetween={0}
                slidesPerView={1}
                navigation
@@ -54,7 +57,7 @@ export function Banner() {
                   )
                })}
             
-            </Swiper>
+            </Swiper> */}
          </Flex>
       </Flex>
    )

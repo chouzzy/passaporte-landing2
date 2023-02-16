@@ -1,4 +1,3 @@
-import { About } from "../5-About";
 import { Homepage } from "./Homepage";
 import { SubHomepage } from "./SubHomepage";
 

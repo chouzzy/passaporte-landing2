@@ -1,22 +1,73 @@
-import { Flex, Heading, Text, VStack } from "@chakra-ui/react";
+import { Flex, Heading, Image, Link, List, ListIcon, ListItem, Text, useBreakpointValue } from "@chakra-ui/react"
+import { BsDashLg } from 'react-icons/bs'
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
+import 'swiper/css/autoplay';
+import { firstSessionData } from "./Data";
 
 
-export function SecondSession() {
+export function OportunitiySession() {
 
-   const textData = {
-      title:'Muitos brasileiros não sabem que têm direito à nacionalidade portuguesa!',
-      subtitle:'Durante a Inquisição, que perdurou por mais de 300 anos em Portugal, muitas pessoas foram forçadas a abandonarem sua fé e suas crenças para evitar perseguições, torturas e até execuções, levando milhares de pessoas à conversão forçada ao Cristianismo e à adoção sobrenomes típicos portugueses. Assim, como forma reparação histórica, em 2015, foi aprovado o Decreto-Lei 30-A/2015, propiciando a todos os descendentes de perseguidos no período o direito à cidadania portuguesa. São muitos brasileiros elegíveis, mesmo que a ancestralidade nunca tenha sido conhecida!'
-   }
+   const slides = useBreakpointValue({ base: 1, sm: 1, md: 1, lg: 1, xl: 1 })
+
    return (
-      <Flex w='100%' flexDir='column' color='whiteAlpha.800' justifyContent='center' alignItems='center'> 
-         <VStack spacing={4} px={[4,12,12,12,32]} textAlign={['left','center','center','center']}>
-            <Heading fontSize='1.8rem' fontWeight='300' color='clubAqua'>
-               {textData.title}
+      <Flex
+      mt={12} 
+      w='100%' 
+      flexDir={['column','column','row', 'row']} 
+      alignItems='center'
+      >
+
+         <Flex 
+         w='100%' 
+         flexDir={'column'} 
+         textAlign='left' 
+         gap={8} p={[4,8,16]} 
+         borderRight={['','','','1px solid #00000033']}
+         >
+            <Heading 
+            fontSize={['2rem','2.4rem','2.4rem']} color='clubAqua' fontWeight='300'
+            >
+               {firstSessionData.title}
             </Heading>
-            <Text fontWeight='300'>
-               {textData.subtitle}
+            <Text
+            fontSize={['1.1rem','1.2rem','1.2rem']}
+            >
+               {firstSessionData.subtitle}
             </Text>
-         </VStack>
+            
+         </Flex>
+         
+         <Flex 
+         minW={['100vw','100vw','50vw','50vw']}
+         p={[4,2,0,0]}
+         justifyContent='center'
+         alignItems={'center'}
+         flexDir='column'
+         >
+            <Link 
+            href='https://blogs.oglobo.globo.com/portugal-giro/post/falta-de-mao-de-obra-chega-nivel-critico-e-portugal-precisa-de-milhares-de-trabalhadores.html'
+            target={'_blank'}
+            >
+            <Image
+            border={'1px solid #00000044'}
+            _hover={{border:'1px solid #1c928b', transition:'400ms'}}
+            src={'static/img/noticias/oportunidade_de_ouro_3.png'} 
+            alt='Noticia O Globo "Falta de mão de obra chega ca nível 
+            crítico e Portugal precisa de milhares de trabalhadores'
+            />
+            </Link>
+
+            <Flex
+            fontSize='0.7rem'
+            color={'gray.700'}
+            >
+               Créditos: https://blogs.oglobo.globo.com/ - Gian Amato
+            </Flex>
+
+         </Flex>
       </Flex>
    )
 }

@@ -2,7 +2,6 @@ import { Flex } from "@chakra-ui/react";
 
 
 export const vistos = [
-    [
        {id:1,
        name: 'Visto para procura de trabalho em Portugal.', 
        description:
@@ -44,9 +43,6 @@ export const vistos = [
        </Flex>,
        backgroundSource:'static/img/visa/visa-3.png'
        },
- 
-    ],
-    [
        {id:5,
        name: 'Visto D4: O ensino em Portugal a um passo de distância!',
        description:
@@ -90,5 +86,4 @@ export const vistos = [
        </Flex>,
        backgroundSource:'static/img/visa/visa-7.png'
        },
- ]
  ]

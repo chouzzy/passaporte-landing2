@@ -18,11 +18,44 @@ interface VisaModalProps {
 export function VisaModal({isOpen, onClose, data}:VisaModalProps) {
     const isDesktop = useBreakpointValue({ base: false, sm:false, md:false, lg: true , xl: true});
     return (
-        <Flex w={['100%','100%','100%','60%']} flexDir={'column'} >
+        <Flex w={['100%','100%','100%','100%']} flexDir={'column'} my='auto'>
 
-            {isDesktop ?
-            isOpen?
-            ''
+            { isOpen?
+            <Collapse in={isOpen}  >
+                    <Box
+                        bgColor='clubDark'
+                        bgSize={'cover'}
+                        bgPosition={'center'}
+                        color='white'
+                        shadow='md'
+                    >
+                        <VStack p={[4,4,4,4,4]} position='relative' >
+                            <Flex 
+                            position='absolute' top='1' right='1'
+                            color={'#1c928b'} 
+                            cursor='pointer' 
+                            _hover={{color:'red.500', transition:'400ms'}}
+                            onClick={onClose}
+                            >
+        
+                            <XCircle size={20}  weight="regular"/>
+        
+                            </Flex>
+                            <VStack my='auto'>
+                                <Text fontSize='1.1rem' bg='clubAqua' p={5} w='100%' color='salt' textAlign='center'>
+                                {data.name}
+                                </Text>
+        
+                                <Flex h='100%' p={4}>
+                                    <Text>
+                                        {data.description}
+                                    </Text>
+                                </Flex>
+                            </VStack>
+        
+                        </VStack>
+                    </Box>
+            </Collapse >
             :
             <Flex my='auto' color='white' fontWeight={200} justifyContent='center'>
                 <Flex alignItems={'center'} gap={4}>
@@ -32,45 +65,7 @@ export function VisaModal({isOpen, onClose, data}:VisaModalProps) {
                     <ArrowRight size={48} color="#4ca7a1" weight="thin" />
                 </Flex>
             </Flex>
-            :
-                ''
             }
-
-            <Collapse in={isOpen}  >
-            <Box
-                bgColor='clubDark'
-                bgImage={'static/img/airplane-bg.png'}
-                bgSize={'cover'}
-                bgPosition={'center'}
-                color='white'
-                shadow='md'
-                w='100%'
-            >
-                <VStack p={[4,4,4,4,8]} position='relative'>
-                    <Flex 
-                    position='absolute' top='1' right='1'
-                    color={'#1c928b'} 
-                    cursor='pointer' 
-                    _hover={{color:'red.500', transition:'400ms'}}
-                    onClick={onClose}
-                    >
-
-                    <XCircle size={20}  weight="regular"/>
-
-                    </Flex>
-                    <Text fontSize='1.1rem' bg='clubAqua' p={5} w='100%' color='salt' textAlign='center'>
-                    {data.name}
-                    </Text>
-
-                    <Flex bgColor='clubDark' h='100%' p={4}>
-                        <Text>
-                            {data.description}
-                        </Text>
-                    </Flex>
-
-                </VStack>
-            </Box>
-            </Collapse >
         </Flex>
     )
 }

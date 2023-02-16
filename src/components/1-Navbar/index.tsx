@@ -51,12 +51,13 @@ export function Navbar({serviceOn, backPage}:NavbarProps) {
    const visaOffset = useBreakpointValue(  {base:  -100,    sm: -100,    md:  -100,    lg: 3200 ,   xl:3000 })
 
    const navItems= [
-   {id:'#Home', text:'Home', active:'active', offSet:homeOffset},
+   // {id:'#Home', text:'Home', active:'active', offSet:homeOffset},
    // {id:'#quemSomos', text:'Quem somos', offSet:quemSomosOffset},
    // {id:'#services', text:'Serviços'},
-   {id:'#feedbacks', text:'Referências', offSet:feedbacksOffset},
-   {id:'#namidia', text:'Na Mídia', offSet:namidiaOffset},
-   {id:'#contato', text:'Contato', offSet:contatoOffset}]
+   // {id:'#Oportunity', text:'Oportunidade', offSet:feedbacksOffset},
+   // {id:'#Hurry', text:'Não deixe para depois', offSet:namidiaOffset},
+   // {id:'#contato', text:'Necessidade', offSet:contatoOffset}
+]
 
    let socialMediaLinks = [
       {id:"instagram", instagram:'https://www.instagram.com/clubedopassaporte/'},
