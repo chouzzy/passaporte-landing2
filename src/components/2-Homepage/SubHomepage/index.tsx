@@ -35,7 +35,7 @@ export function SubHomepage() {
                   color='white'
                   _hover={{bg:'blackAlpha.900', color:'clubMaldivas', transition:'500ms', px:'10'}}
                   >
-                   Clique aqui para falar com a nossa equipe e solicitar acesso ao Guia Essencial para mudar para Portugal
+                   Clique aqui para falar com a nossa equipe e solicitar acesso ao Guia Essencial para mudar para Portugal!
                   </Flex>
                </VStack>
             </Flex>
