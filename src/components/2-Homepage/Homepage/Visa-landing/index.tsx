@@ -13,7 +13,7 @@ import { vistos } from "./vistos";
 export function VisaLanding() { 
    const [data, setData] = useState({})
    const { isOpen, onOpen, onClose, onToggle } = useDisclosure()
-   const title = <> Essa é a chance de ouro para morar em um  <b style={{color:'#4ca7a1', fontWeight:'300'}}> país de 1º Mundo </b> </>
+   const title = <> Essa é a chance de ouro para brasileiros irem  morar em um  <b style={{color:'#4ca7a1', fontWeight:'300'}}> país de 1º Mundo </b> </>
    const ebookButtonText = <> <b> Clique aqui </b> para falar com a nossa equipe e solicitar acesso ao <b>Guia Essencial</b> para mudar para Portugal! </>
 
    function handleVisaDetails(visaItem) {
@@ -27,13 +27,14 @@ export function VisaLanding() {
          <VStack 
          w={['100%','88%','88%','88%']} 
          p={[0,0,0,4]}
-         spacing={12}
+         spacing={[24,12,12]}
          >
 
             <Heading 
-            w='100%' 
-            textAlign={'center'} 
-            fontWeight='300' 
+            w='100%'
+            textAlign={'center'}
+            fontWeight='300'
+            fontSize={['2rem','2.6rem','2.6rem','3.2rem']}
             color='gray.50'
             >
                {title}
@@ -41,7 +42,7 @@ export function VisaLanding() {
 
             <Flex
             cursor={'pointer'} 
-            p={4}
+            p={[3,3,4]}
             borderRadius={8}
             bgGradient='linear(to-br, clubMaldivas, clubAqua)'
             boxShadow={'dark-lg'}
@@ -50,8 +51,8 @@ export function VisaLanding() {
             _hover={{bgGradient:'linear(to-br, white, whiteAlpha.900)', color:'clubAqua', transition:"300ms"}}
             >
                <Text
-               fontWeight='400' 
-               fontSize='1rem'
+               fontWeight='00' 
+               fontSize='1.1rem'
                >
 
                {ebookButtonText}

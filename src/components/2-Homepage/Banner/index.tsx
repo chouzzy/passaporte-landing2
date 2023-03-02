@@ -37,7 +37,7 @@ export function Banner() {
       <Flex w='100%' h='100%'>
          <Flex maxW={'100%'} h='100%' zIndex='0'>
             <Heading color='white'>
-               Essa é a chance de ouro para morar em um país de 1º Mundo
+            Essa é a chance de ouro para brasileiros irem morar em um país de primeiro mundo
             </Heading>
             {/* <Swiper
                spaceBetween={0}

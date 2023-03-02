@@ -1,24 +1,32 @@
-import { List, ListIcon, ListItem, Text } from "@chakra-ui/react"
+import { Flex, List, ListIcon, ListItem, Text } from "@chakra-ui/react"
 import { IoMdCheckmarkCircle } from "react-icons/io"
 
 
 const qualityLifeIndexData = {
 title:'Qualidade de vida',
-subtitle:<> Devido a todos esses fatores abordados, podemos concluir que a qualidade de vida em Portugal deve ser excelente. E é exatamente isso que diversas pesquisas sugerem,  alguns poucos exemplos: </>,
+subtitle:<> Devido a todos esses fatores abordados, podemos concluir que a qualidade de vida em Portugal é incrível. E é exatamente isso que diversas pesquisas sugerem,  alguns poucos exemplos: </>,
 info:<>
     <List spacing={3}>
 
-    <ListItem>
-        <ListIcon as={IoMdCheckmarkCircle} color='green.500' />
-        Não precisam pagar plano de saúde, já que o sistema público de lá funciona super bem
+    <ListItem display='flex' alignItems={'center'}>
+        <ListIcon fontSize={'xl'} as={IoMdCheckmarkCircle} color='green.500' />
+        <Flex display='inline'> Portugal é topo do Ranking da Working Millennial Index: “Melhores países para se viver e trabalhar” (24º posição) </Flex>
     </ListItem>
-    <ListItem>
-        <ListIcon as={IoMdCheckmarkCircle} color='green.500' />
-        Não necessitam pagar escola para seus filhos, pois o sistema de Educação também é excelente
+    <ListItem display='flex' alignItems={'center'}>
+        <ListIcon fontSize={'xl'} as={IoMdCheckmarkCircle} color='green.500' />
+        <Flex display='inline'> Eleito o 1º país em qualidade de vida para estrangeiros, segundo a revista Insider </Flex>
     </ListItem>
-    <ListItem>
-        <ListIcon as={IoMdCheckmarkCircle} color='green.500' />
-        Além disso, existe a questão do poder de compra, que foi detalhado acima. 
+    <ListItem display='flex' alignItems={'center'}>
+        <ListIcon fontSize={'xl'} as={IoMdCheckmarkCircle} color='green.500' />
+        <Flex display='inline'> Eleito o melhor país para se viver pela Forbes </Flex>
+    </ListItem>
+    <ListItem display='flex' alignItems={'center'}>
+        <ListIcon fontSize={'xl'} as={IoMdCheckmarkCircle} color='green.500' />
+        <Flex display='inline'> É o 6º país com o menor o Índice de Desigualdade da União Europeia </Flex>
+    </ListItem>
+    <ListItem display='flex' alignItems={'center'}>
+        <ListIcon fontSize={'xl'} as={IoMdCheckmarkCircle} color='green.500' />
+        <Flex display='inline'> É classificado como o 17º país com melhor Índice de Segurança Internacional da Economist Intelligence Unit (EIU) </Flex>
     </ListItem>
     </List>
     </>,

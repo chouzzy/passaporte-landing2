@@ -1,20 +1,71 @@
-import { Flex, Link, Text } from "@chakra-ui/react";
-import { WhatsappLogo } from "phosphor-react";
+import { Button, Flex, Input, VStack, Popover, PopoverArrow, PopoverBody, PopoverCloseButton, PopoverContent, PopoverFooter, PopoverHeader, PopoverTrigger, Portal, FormLabel, FormControl, Link } from "@chakra-ui/react";
+import { useState } from "react";
 import { BsWhatsapp } from "react-icons/bs";
-import { RiWhatsappFill } from "react-icons/ri";
 
 
 export default function WhatsButton() {
+
+    const [name, setName] = useState("")
+    const [number, setNumber] = useState("")
+
     return (
-        <Link href='https://wa.me/5511930003573?text=Olá, tudo bem? Acessei o site do Clube do Passaporte e gostaria de falar com um atendente.' target="_blank">
+        <>
+        
+        {/* <Link href='https://wa.me/5511930003573?text=Olá, tudo bem? Acessei o site do Clube do Passaporte e gostaria de falar com um atendente.' target="_blank"></Link> */}
         
         <Flex bg='#25D366' color="#fffafa"
         fontSize='1.8rem' borderRadius={'full'} p={4} 
         position='fixed'bottom={8} right={8}
         _hover={{ transition:' 400ms', fontSize:'2.4rem'}}
         cursor='pointer'>
-            <BsWhatsapp/>
-        </Flex>
-        </Link>
+            
+            <Popover>
+                <PopoverTrigger>
+                    <Flex>
+                        <BsWhatsapp/>
+                    </Flex>
+                </PopoverTrigger>
+
+                <Portal>
+                    <PopoverContent bg='#0f1d27' border='none' p={2} m={2} borderRadius={2}>
+                        <PopoverArrow bg='#0f1d27' border='none'/>
+                        <PopoverCloseButton color='white' fontSize='0.9rem' p={6} _hover={{color:'clubMaldivas'}}/>
+                        <PopoverBody>
+
+                            <VStack spacing={3}>
+                                
+                                <Flex color='white' fontWeight={400}> 
+                                    Por favor, preencha as seguintes informações:
+                                </Flex>
+
+                                <FormControl isRequired>
+                                    <Input type='name' onChange={(e) => {setName(`${e.target.value}`)}} my={1} variant='outline' bg='white' placeholder='Nome' />
+                                    <Input type='number' onChange={(e) => {setNumber(`${e.target.value}`)}} my={1} variant='outline' bg='white' placeholder='Número' />
+                                </FormControl>    
+    
+                                <Link 
+                                href={`https://wa.me/5511930003573?text=Olá, tudo bem? Meu nome é ${name} e meu telefone é ${number}. Acessei o site do Clube do Passaporte e gostaria de falar com um atendente.`} target="_blank"
+                                _hover={{textDecoration:'none'}}>
+                                    <Flex 
+                                    bg='#25D366' 
+                                    _hover={{bg:'clubMaldivas'}}
+                                    borderRadius={2} 
+                                    gap={3}
+                                    p={2}
+                                    boxShadow='2px 2px 1px #000000bb'
+                                    > 
+                                        <Flex color='white'>Falar conosco </Flex>
+                                        <BsWhatsapp fontSize={'1.4rem'} color='white'/>
+                                    </Flex>
+                                </Link>
+                            </VStack>
+
+                        </PopoverBody>
+                    </PopoverContent>
+                </Portal>
+            </Popover>
+        
+      </Flex>
+      </>
     )
 }

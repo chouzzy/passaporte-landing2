@@ -12,21 +12,21 @@ export function LifeQualityIndexes() {
 
    return (
       <Flex
-      w='100%' 
+      w='100%'
       flexDir={['column','column','row-reverse', 'row-reverse']} 
       alignItems='center'
-      gap={[6,6,0]}
+      gap={[0,6,0]}
       >
 
          <Flex 
          w='100%' 
          flexDir={'column'} 
-         textAlign='left' 
+         textAlign={['justify','center','left']}
          gap={8} p={[4,8,16]}
          borderLeft={['','','','1px solid #00000033']}
          >
             <Heading 
-            fontSize={['1.6rem','2rem','2rem']} color='clubAqua' fontWeight='300'
+            fontSize='2rem' textAlign={['center','center','left']} color='clubAqua' fontWeight='300'
             >
                {qualityLifeIndexData.title}
             </Heading>
@@ -37,6 +37,7 @@ export function LifeQualityIndexes() {
             </Text>
             <Box 
             fontSize={['1rem','1rem','1rem']}
+            textAlign='left'
             >
                {qualityLifeIndexData.info}
             </Box>
@@ -45,15 +46,11 @@ export function LifeQualityIndexes() {
          
          <Flex 
          minW='50%'
-         p={[4,2,0,0]}
+         p={[8,2,0,0]}
          justifyContent='center'
          alignItems={'center'}
          flexDir='column'
          >
-            <Link 
-            href='https://g1.globo.com/economia/noticia/2023/01/31/pib-de-portugal-cresceu-67-em-2022-o-maior-nivel-em-35-anos.ghtml'
-            target={'_blank'}
-            >
             <Image
             maxW={['','72vw','36vw']}
             border={'1px solid #00000044'}
@@ -63,10 +60,8 @@ export function LifeQualityIndexes() {
             crítico e Portugal precisa de milhares de trabalhadores'
             />
 
-            </Link>
-
             <Flex
-            fontSize='0.7rem'
+            fontSize='0.5rem'
             color={'gray.700'}
             >
                Créditos: https://g1.globo.com/ - France Presse

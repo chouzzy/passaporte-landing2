@@ -50,10 +50,6 @@ export function Hurry() {
          alignItems={'center'}
          flexDir='column'
          >
-            <Link 
-            href='https://www.jornaldenegocios.pt/economia/seguranca-social/detalhe/governo-diz-que-ha-55-mil-estrangeiros-que-querem-vir-trabalhar-para-portugal'
-            target={'_blank'}
-            >
             <Image
             maxW={['','72vw','40vw']}
             border={'1px solid #00000044'}
@@ -63,10 +59,8 @@ export function Hurry() {
             crítico e Portugal precisa de milhares de trabalhadores'
             />
 
-            </Link>
-
             <Flex
-            fontSize='0.7rem'
+            fontSize='0.5rem'
             color={'gray.700'}
             >
                Créditos: https://www.jornaldenegocios.pt/ - Catarina Almeida Pereira

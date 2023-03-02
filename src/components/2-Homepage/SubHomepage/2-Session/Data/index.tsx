@@ -2,7 +2,7 @@
 
 const firstSessionData = {
 title:'Oportunidade de Ouro:',
-subtitle:<> O <b style={{color:'#1c928b'}}> Clube do Passaporte</b> conta com uma equipe de advogados e genealogistas especializados em pesquisar todas as suas raízes históricas judaicas e conseguir sua cidadania portuguesa.</>,
+subtitle:<>  Portugal <span style={{color:'#1c928b'}}> precisa urgentemente de trabalhadores </span> e, por isso, abriu uma grande oportunidade que praticamente qualquer brasileiro consegue aproveitar: um visto de trabalho que permite a ida para Portugal legalmente em busca de uma dessas milhares de vagas abertas, em diversas áreas.</>,
 list:[
 "Estudo Genealógico",
 "Aprovação comunitária em Portugal",

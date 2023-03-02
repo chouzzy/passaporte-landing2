@@ -16,10 +16,9 @@ import { qualityLifeData, lines } from "./Data/QualityLifeData";
     
     return (
       <Flex id='#qualityLifeData' 
-      w='100%' 
-      bg='blackAlpha.900'
-      flexDir='column' 
-      gap={8} px={0} pt={6} 
+      w='100%'
+      bg='#0f1d27'
+      flexDir='column'  px={0} pt={6} 
       color='gray.50'
       >
 
@@ -28,45 +27,40 @@ import { qualityLifeData, lines } from "./Data/QualityLifeData";
          gap={6}
          flexDir='column'
          alignItems='center' 
-         zIndex={0} 
+         zIndex={0}
          color='whiteAlpha.800'
          >
             
-            <Flex w='100%'>
+            <Flex 
+            w='100%' 
+            my={4}
+            p={4}
+            >
                 <Heading 
-                mx='auto' 
+                mx='auto'
                 textAlign={'center'}
-                fontWeight='300' fontSize='1.65rem' 
-                color='gray.50' 
+                fontWeight='300' fontSize='2rem' 
+                color='white' 
+                
                 > 
                     {qualityLifeData.title}
                 </Heading>
             </Flex>
 
-            <Flex maxW={'100%'}>
-                <Swiper
-                spaceBetween={24}
-                slidesPerView={1}
-                navigation
-                autoplay
-                loop
-                // onSlideChange={() => console.log('slide change')}
-                >
+            <Flex w={'100%'} mx='auto' flexDir='column' gap={2} boxShadow='1px 1px 1px #000000'>
 
                 {lines.map( item => {
                     return (
-                    <SwiperSlide key={item.id}>
-                            <Text h={0} ml={4000} color='clubDark'>.</Text>
-                            <LineItem  
+                        <>
+                            <LineItem
                             image={item.image} 
                             title={item.title} 
                             info={item.info} 
                             />
-                    </SwiperSlide>
+                        </>
                     )
                 })}
                 
-                </Swiper>
             </Flex>
          </Flex>
       </Flex>

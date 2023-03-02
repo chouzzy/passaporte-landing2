@@ -9,10 +9,10 @@ info:<>
     Como já  têm muitos interessados, especialistas estimam que essa oportunidade não deve durar muito já que, em alguns anos, ou mesmo meses, Portugal terá conseguido suprir a sua necessidade de novas pessoas por lá.
     <br></br>
     <br></br>
-    É justamente por isso, que 2023 é o ano ideal para realizar essa mudança. Então se houver um planejamento desde já, e com as informações corretas, as suas chances de sucesso em Portugal são altíssimas! 
+    É justamente por isso, que 2023 é o ano ideal para realizar essa mudança, pois se houver um planejamento desde já, e com as informações corretas, as suas chances de sucesso em Portugal são altíssimas! 
     <br></br>
     <br></br>
-    Então para quem se interessa por essa oportunidade de ouro, e deseja ter uma vida de cidadão de primeiro mundo, nós preparamos um e-book que vai te guiar durante a sua jornada para Portugal. Basta clicar aqui, que você poderá falar com a nossa equipe e solicitar o acesso a esse ebook <b style={{color:'#1c928b'}}>gratuitamente!</b> 
+    Então para quem se interessa por essa oportunidade de ouro, e deseja ter uma vida de cidadão de primeiro mundo, nós preparamos um e-book que vai te guiar durante a sua jornada para Portugal. <a href={'/'} target='_blank' style={{textDecoration:'none', color:'#1c928b', fontWeight:'500'}} rel="noreferrer"> Basta clicar aqui </a>, que você poderá falar com a nossa equipe e solicitar o acesso a esse ebook <b style={{color:'#1c928b'}}>gratuitamente!</b> 
 
     </>,
 list:[

@@ -18,23 +18,23 @@ export function LineItem({image, title, info}:LineItemProps) {
    return (
       <Flex
       mx='auto'
-      minH={['72vh','80vh','80vh','80vh']}
+      w='100%'
+      minH='110vh'
       borderRadius={1}
+      boxShadow='2px 2px 4px #000000'
 
       bgImage={image}
       bgSize={'cover'}
       bgRepeat='no-repeat'
       bgPosition='center'
-
-      position='relative'
+      bgColor='whiteAlpha.300'
       justifyContent='center'
       alignItems='center'
       >
 
          <Grid 
          h='100%' 
-         w={'100.3%'} 
-         position='absolute' 
+         w={'100%'} 
          color='gray.50'
          justifyContent={'center'}
          alignItems='center'
@@ -42,31 +42,31 @@ export function LineItem({image, title, info}:LineItemProps) {
             <VStack
             maxW={['90vw','80vw','72vw','60vw']}
             p={6}
-            bg='whiteAlpha.700'
-            borderRadius={2}
+            bg='#0f1d27ee'
+            borderRadius={24}
             textAlign='left'
             justifyContent='center'
             gap={8}
             >
 
                <Flex
-               bg='clubMoss'
-               borderRadius={2}
-               p={3}
-               fontSize={['1rem','1.1rem','1.2rem']}
+               borderRadius={1}
+               fontSize='2rem'
                fontWeight='300'
-               color='gray.50'
+               textAlign={'center'}
+               color='clubMaldivas'
                >
                   {title}
                </Flex>
                
                <Flex 
                
-               fontSize={['1rem','1.1rem','1.2rem']} 
+               fontSize={['1.2rem','1.1rem','1.2rem']} 
                fontWeight='400'
                flexDir={'column'}
+               textAlign={['justify','justify','left']}
                gap={2}
-               color='black'
+               color='white'
                lineHeight={1.6}
                >
                   {info}
