@@ -25,7 +25,7 @@ export function ModalMenu(ModalMenuProps) {
                rounded='md'
                shadow='md'
             >
-               <VStack textTransform='uppercase' fontFamily='Heebo' fontSize='1.05rem' pt={4}>
+               <VStack  fontFamily='Heebo' fontSize='1.05rem' pt={4}>
 
                   {ModalMenuProps.navItems.map( item => {
                      return (
@@ -35,8 +35,8 @@ export function ModalMenu(ModalMenuProps) {
                         
                      )
                   })}
-                  <HStack p={2} fontSize='1.6rem' spacing={3} textAlign='center' borderBottom='1px solid #7cc3bb' w='36vw' justifyContent='center'>
-                        <SocialMedia mediaColor='gray.50' icon={<BsInstagram/>} mediaLink={ModalMenuProps.mediaLinks[0].instagram}/>
+                  <HStack p={2} fontSize='1.6rem' spacing={3} textAlign='center' borderBottom='1px solid #7cc3bb' w={['60vw','36vw','36vw']} justifyContent='center'>
+                        {/* <SocialMedia mediaColor='gray.50' icon={<BsInstagram/>} mediaLink={ModalMenuProps.mediaLinks[0].instagram}/> */}
                         <SocialMedia tag='zap-tag' mediaColor='gray.50' icon={<RiWhatsappFill/>} mediaLink={ModalMenuProps.mediaLinks[3].whatsapp}/>
                   </HStack>
                </VStack>

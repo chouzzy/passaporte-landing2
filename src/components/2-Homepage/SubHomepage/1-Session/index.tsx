@@ -24,14 +24,15 @@ export function FirstSession() {
             <List spacing={3} textAlign='left'>
                {firstSessionData.list.map( item => {
                   return (
-                     <ListItem key={item} fontWeight='300'> <ListIcon fontSize='1.5rem' as={AiOutlineCheck} color='green.500' /> <Text display='inline'> {item} </Text> </ListItem>
+                     <ListItem key={item} fontWeight='300'> <ListIcon fontSize='1.5rem' as={AiOutlineCheck} color='green.500' /> <Text display='inline'> {item} </Text> 
+                     </ListItem>
                   )
                })}
             </List>
             
          </Flex>
          <Flex w='100%' p={[4,8,12]}>
-            <Image mx='auto' maxW={['','80%','80%','80%']} src='static/img/bonde.jpg'/>
+            <Image mx='auto' maxW={['','80%','80%','80%']} src='static/img/bonde.jpg' alt='Bonde em portugal'/>
          </Flex>
       </Flex>
    )

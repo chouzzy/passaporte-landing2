@@ -54,7 +54,6 @@ export function LifeQualityIndexes() {
             <Image
             maxW={['','72vw','36vw']}
             border={'1px solid #00000044'}
-            _hover={{border:'1px solid #1c928b', transition:'400ms'}}
             src={'static/img/noticias/qualidade_de_vida.png'}
             alt='Noticia O Globo "Falta de mão de obra chega ca nível 
             crítico e Portugal precisa de milhares de trabalhadores'

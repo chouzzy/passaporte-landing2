@@ -27,7 +27,7 @@ export function LineItem({image, title, info}:LineItemProps) {
       bgSize={'cover'}
       bgRepeat='no-repeat'
       bgPosition='center'
-      bgColor='whiteAlpha.300'
+      bgColor='clubDarkBlue'
       justifyContent='center'
       alignItems='center'
       >

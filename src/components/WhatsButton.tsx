@@ -40,7 +40,7 @@ export default function WhatsButton() {
 
                                 <FormControl isRequired>
                                     <Input type='name' onChange={(e) => {setName(`${e.target.value}`)}} my={1} variant='outline' bg='white' placeholder='Nome' />
-                                    <Input type='number' onChange={(e) => {setNumber(`${e.target.value}`)}} my={1} variant='outline' bg='white' placeholder='Número' />
+                                    <Input type='number' onChange={(e) => {setNumber(`${e.target.value}`)}} my={1} variant='outline' bg='white' placeholder='DDD + número, ex: 11999998888' />
                                 </FormControl>    
     
                                 <Link 

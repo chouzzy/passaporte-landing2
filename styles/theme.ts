@@ -13,7 +13,8 @@ export const theme = extendTheme({
      clubBlack:'#202020',
      clubMoss:"#356561",
      clubCigar:"#637776",
-     clubMaldivas:"#4ca7a1"
+     clubMaldivas:"#4ca7a1",
+     clubDarkBlue:'#0f1d27'
    },
    styles: {
      global: {
