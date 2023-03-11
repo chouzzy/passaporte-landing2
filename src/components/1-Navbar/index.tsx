@@ -19,7 +19,7 @@ interface NavbarProps {
 
 export function Navbar({ serviceOn, backPage }: NavbarProps) {
 
-   const [whatsNumber, setWhatsNumber] = useState('5511930003573')
+   const [whatsNumber, setWhatsNumber] = useState('5511930003574')
    const { isOpen, onOpen, onClose } = useDisclosure()
    const [name, setName] = useState("")
    const [number, setNumber] = useState("")
@@ -209,7 +209,7 @@ export function Navbar({ serviceOn, backPage }: NavbarProps) {
                                           </FormControl>
 
                                           <Link
-                                             href={`https://wa.me/5511930003573?text=Olá, tudo bem? Meu nome é ${name} e meu telefone é ${number}. Acessei o site do Clube do Passaporte e gostaria de falar com um atendente.`} target="_blank"
+                                             href={`https://wa.me/5511930003574?text=Olá, tudo bem? Meu nome é ${name} e meu telefone é ${number}. Acessei o site do Clube do Passaporte e gostaria de falar com um atendente.`} target="_blank"
                                              _hover={{ textDecoration: 'none' }}>
                                              <Flex
                                                 bg='#25D366'
