@@ -27,10 +27,10 @@ export default function Contact() {
         my={'auto'}
         maxW={['80vw', '80vw', '80vw']}
       >
-        <Image src='static/img/logo branco.png' alt="logo" maxW={32}/>
+        <Image src='static/img/logo branco.png' alt="logo" maxW={32} />
 
         <Heading color='gray.50' fontWeight={'300'} textAlign='center'>
-          Obrigado pelo envio de seus dados!
+          Ficamos felizes pelo seu interesse!
         </Heading>
         <Text color='gray.50' fontWeight={'400'} textAlign='center'>
           Clique abaixo para falar com um de nossos atendentes
@@ -49,7 +49,7 @@ export default function Contact() {
             gap={3}
             p={2}
             boxShadow='2px 2px 1px #000000bb'
-            >
+          >
             <Text color='gray.50'> FALE CONOSCO </Text>
             <BsWhatsapp fontSize={'1.4rem'} color='white' />
           </Flex>

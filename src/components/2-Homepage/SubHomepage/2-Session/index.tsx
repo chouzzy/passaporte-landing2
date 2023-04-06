@@ -29,7 +29,7 @@ export function OportunitiySession() {
 
       if (typeof window !== "undefined") {
          router.push({
-            pathname: "contact",
+            pathname: "obrigado-whatsapp",
             query: {
                name: name,
                number: number

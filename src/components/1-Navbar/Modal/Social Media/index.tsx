@@ -29,7 +29,7 @@ export function SocialMedia({ mediaLink, mediaColor, icon, tag }: mediaProps) {
 
       if (typeof window !== "undefined") {
          router.push({
-            pathname: "contact",
+            pathname: "obrigado-whatsapp",
             query: {
                name: name,
                number: number

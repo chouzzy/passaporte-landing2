@@ -39,7 +39,7 @@ export function Navbar({ serviceOn, backPage }: NavbarProps) {
 
       if (typeof window !== "undefined") {
           router.push({
-              pathname: "contact",
+              pathname: "obrigado-whatsapp",
               query:{
                   name: name,
                   number: number
