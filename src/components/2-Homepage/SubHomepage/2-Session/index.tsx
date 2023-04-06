@@ -1,18 +1,44 @@
-import { Flex, FormControl, Heading, Image, Input, Link, List, ListIcon, ListItem, Popover, PopoverArrow, PopoverBody, PopoverCloseButton, PopoverContent, PopoverTrigger, Portal, Text, useBreakpointValue, VStack } from "@chakra-ui/react"
-import { BsDashLg, BsWhatsapp } from 'react-icons/bs'
+import { Flex, FormControl, Heading, Image, Input, Link, Popover, PopoverArrow, PopoverBody, PopoverCloseButton, PopoverContent, PopoverTrigger, Portal, Text, useBreakpointValue, VStack } from "@chakra-ui/react"
+import { BsWhatsapp } from 'react-icons/bs'
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import 'swiper/css/autoplay';
 import { firstSessionData } from "./Data";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
 
 
 export function OportunitiySession() {
 
    const [name, setName] = useState("")
    const [number, setNumber] = useState("")
+   const [linkDisable, SetLinkDisable] = useState(true)
+   const router = useRouter()
+
+   useEffect(() => {
+       if (name.length > 1 && number.length > 10) {
+           SetLinkDisable(false)
+       } else {
+           SetLinkDisable(true)
+       }
+   }, [name, number])
+
+   function RedirectContact(name, number) {
+
+      if (typeof window !== "undefined") {
+         router.push({
+            pathname: "contact",
+            query: {
+               name: name,
+               number: number
+            }
+         })
+      }
+      return
+   }
+
    const slides = useBreakpointValue({ base: 1, sm: 1, md: 1, lg: 1, xl: 1 })
 
    return (
@@ -36,7 +62,7 @@ export function OportunitiySession() {
                {firstSessionData.title}
             </Heading>
             <Flex
-            display='inline'
+               display='inline'
                fontSize={['1.1rem', '1.2rem', '1.2rem']}
             >
                {firstSessionData.subtitle}
@@ -44,7 +70,7 @@ export function OportunitiySession() {
                <Popover>
                   <PopoverTrigger>
                      <Text fontSize={['1.1rem', '1.2rem', '1.2rem']} display='inline' pl={1} _hover={{ textDecoration: 'none', cursor: 'pointer', color: 'clubMoss', transition: '500ms' }} color='#1c928b' >
-                     Clique aqui para saber como aproveitar essa <b>oportunidade!</b>
+                        Clique aqui para saber como aproveitar essa <b>oportunidade!</b>
                      </Text>
                   </PopoverTrigger>
 
@@ -65,21 +91,44 @@ export function OportunitiySession() {
                                  <Input type='number' onChange={(e) => { setNumber(`${e.target.value}`) }} my={1} variant='outline' bg='white' placeholder='DDD + número, ex: 11999998888' />
                               </FormControl>
 
-                              <Link
-                                 href={`https://wa.me/5511930003574?text=Olá, tudo bem? Meu nome é ${name} e meu telefone é ${number}. Acessei o site do Clube do Passaporte e gostaria de falar com um atendente.`} target="_blank"
-                                 _hover={{ textDecoration: 'none' }}>
-                                 <Flex
-                                    bg='#25D366'
-                                    _hover={{ bg: 'clubMaldivas' }}
-                                    borderRadius={2}
-                                    gap={3}
-                                    p={2}
-                                    boxShadow='2px 2px 1px #000000bb'
-                                 >
-                                    <Flex color='white'>Falar conosco </Flex>
-                                    <BsWhatsapp fontSize={'1.4rem'} color='white' />
-                                 </Flex>
-                              </Link>
+                              {
+                                 linkDisable == true ?
+                                    <Link
+                                       onClick={() => { RedirectContact(name, number) }}
+                                       pointerEvents='none'
+                                       target="_blank"
+                                       _hover={{ textDecoration: 'none' }}>
+                                       <Flex
+                                          bg='#25D366'
+                                          _hover={{ bg: 'clubMaldivas' }}
+                                          borderRadius={2}
+                                          gap={3}
+                                          p={2}
+                                          boxShadow='2px 2px 1px #000000bb'
+                                       >
+                                          <Flex color='white'>Falar conosco </Flex>
+                                          <BsWhatsapp fontSize={'1.4rem'} color='white' />
+                                       </Flex>
+                                    </Link>
+                                    :
+                                    <Link
+                                       onClick={() => { RedirectContact(name, number) }}
+                                       pointerEvents='auto'
+                                       target="_blank"
+                                       _hover={{ textDecoration: 'none' }}>
+                                       <Flex
+                                          bg='#25D366'
+                                          _hover={{ bg: 'clubMaldivas' }}
+                                          borderRadius={2}
+                                          gap={3}
+                                          p={2}
+                                          boxShadow='2px 2px 1px #000000bb'
+                                       >
+                                          <Flex color='white'>Falar conosco </Flex>
+                                          <BsWhatsapp fontSize={'1.4rem'} color='white' />
+                                       </Flex>
+                                    </Link>
+                              }
                            </VStack>
 
                         </PopoverBody>

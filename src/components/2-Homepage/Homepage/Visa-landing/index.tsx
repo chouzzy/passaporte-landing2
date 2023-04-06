@@ -1,19 +1,43 @@
-import { Box, Collapse, Container, Flex, FormControl, Grid, GridItem, Heading, Input, Link, Popover, PopoverArrow, PopoverBody, PopoverCloseButton, PopoverContent, PopoverTrigger, Portal, SimpleGrid, Text, useDisclosure, VStack } from "@chakra-ui/react";
+import { Flex, FormControl, Heading, Input, Link, Popover, PopoverArrow, PopoverBody, PopoverCloseButton, PopoverContent, PopoverTrigger, Portal, Text, useDisclosure, VStack } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import 'swiper/css/autoplay';
-import { VisaModal } from "./Modal";
-import { vistos } from "./vistos";
 import { BsWhatsapp } from "react-icons/bs";
+import { useRouter } from "next/router";
 
 
 export function VisaLanding() {
 
    const [name, setName] = useState("")
    const [number, setNumber] = useState("")
+   const [linkDisable, SetLinkDisable] = useState(true)
+   const router = useRouter()
+
+   useEffect(() => {
+      if (name.length > 1 && number.length > 10) {
+         SetLinkDisable(false)
+      } else {
+         SetLinkDisable(true)
+      }
+   }, [name, number])
+
+   function RedirectContact(name, number) {
+
+      if (typeof window !== "undefined") {
+         router.push({
+            pathname: "contact",
+            query: {
+               name: name,
+               number: number
+            }
+         })
+      }
+      return
+   }
+
    const [data, setData] = useState({})
    const { isOpen, onOpen, onClose, onToggle } = useDisclosure()
    const title = <> Essa é a chance de ouro para brasileiros irem  morar em um  <b style={{ color: '#4ca7a1', fontWeight: '300' }}> país de 1º Mundo </b> </>
@@ -85,21 +109,44 @@ export function VisaLanding() {
                                  <Input type='number' onChange={(e) => { setNumber(`${e.target.value}`) }} my={1} variant='outline' bg='white' placeholder='DDD + número, ex: 11999998888' />
                               </FormControl>
 
-                              <Link
-                                 href={`https://wa.me/5511930003574?text=Olá, tudo bem? Meu nome é ${name} e meu telefone é ${number}. Acessei o site do Clube do Passaporte e gostaria de falar com um atendente.`} target="_blank"
-                                 _hover={{ textDecoration: 'none' }}>
-                                 <Flex
-                                    bg='#25D366'
-                                    _hover={{ bg: 'clubMaldivas' }}
-                                    borderRadius={2}
-                                    gap={3}
-                                    p={2}
-                                    boxShadow='2px 2px 1px #000000bb'
-                                 >
-                                    <Flex color='white'>Falar conosco </Flex>
-                                    <BsWhatsapp fontSize={'1.4rem'} color='white' />
-                                 </Flex>
-                              </Link>
+                              {
+                                 linkDisable == true ?
+                                    <Link
+                                       onClick={() => { RedirectContact(name, number) }}
+                                       pointerEvents='none'
+                                       target="_blank"
+                                       _hover={{ textDecoration: 'none' }}>
+                                       <Flex
+                                          bg='#25D366'
+                                          _hover={{ bg: 'clubMaldivas' }}
+                                          borderRadius={2}
+                                          gap={3}
+                                          p={2}
+                                          boxShadow='2px 2px 1px #000000bb'
+                                       >
+                                          <Flex color='white'>Falar conosco </Flex>
+                                          <BsWhatsapp fontSize={'1.4rem'} color='white' />
+                                       </Flex>
+                                    </Link>
+                                    :
+                                    <Link
+                                       onClick={() => { RedirectContact(name, number) }}
+                                       pointerEvents='auto'
+                                       target="_blank"
+                                       _hover={{ textDecoration: 'none' }}>
+                                       <Flex
+                                          bg='#25D366'
+                                          _hover={{ bg: 'clubMaldivas' }}
+                                          borderRadius={2}
+                                          gap={3}
+                                          p={2}
+                                          boxShadow='2px 2px 1px #000000bb'
+                                       >
+                                          <Flex color='white'>Falar conosco </Flex>
+                                          <BsWhatsapp fontSize={'1.4rem'} color='white' />
+                                       </Flex>
+                                    </Link>
+                              }
                            </VStack>
 
                         </PopoverBody>

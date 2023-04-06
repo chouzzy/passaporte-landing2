@@ -16,19 +16,25 @@ interface HomepageProps {
    }
 }
 
-export function Homepage({serviceOn, backPage, servicePageData}:HomepageProps) { 
-   // useEffect( () => alert('Site em construção 🚜'),[])
-   // const [background, setBackground] = useState('bg1')
-   // const backgrounds = ['bg1', 'bg2', 'bg3']
+export function Homepage({serviceOn, backPage}:HomepageProps) { 
+
    return (
       <>
-         <Container id='#Home' maxW='100vw' bgImage='static/img/bg-landing.png' bgPos={'center'} bgSize='cover' bgColor='clubDark' p='0' m='0' centerContent>
-         <Navbar serviceOn={serviceOn} backPage={backPage}/>
-         {/* {serviceOn? <Banner/> 
-         :
-         <ServicePage servicePageData={servicePageData} backPage={backPage}/>
-         } */}
-         <VisaLanding/>
+         <Container 
+         id='#Home' 
+         maxW='100vw' 
+         bgImage='static/img/bg-landing.png' 
+         bgPos={'center'} 
+         bgSize='cover' 
+         bgColor='clubDark' 
+         p='0' m='0' 
+         centerContent
+         >
+
+            <Navbar serviceOn={serviceOn} backPage={backPage}/>
+            
+            <VisaLanding/>
+            
          </Container> 
       </>
    )
