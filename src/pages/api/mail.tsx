@@ -13,7 +13,7 @@ export default async (req,res) => {
    Número: ${body.number}\r\n
    `
    const data = {
-      to:'matheus@awer.co',
+      to:'clubedopassaporte@gmail.com',
       from: 'contato@awer.co',
       subject: `Contato via Landing Page - Vistos do Clube do Passaporte`,
       text: message,
