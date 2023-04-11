@@ -1,5 +1,6 @@
 import { Button, Container, Flex, Heading, Image, Link, Text } from "@chakra-ui/react";
 import { useRouter } from "next/router";
+import { useEffect } from "react";
 import { BsWhatsapp } from "react-icons/bs";
 
 
@@ -7,6 +8,25 @@ export default function Contact() {
 
   const router = useRouter()
   const { name, number } = router.query
+
+  useEffect(() => {
+
+    const emailData = { name, number }
+
+    if (name != undefined && number != undefined) {
+
+      setTimeout(() => {
+
+        fetch('/api/mail', {
+          method: 'post',
+          body: JSON.stringify(emailData)
+        })
+
+      }, 2000)
+
+    }
+  })
+
   return (
     <Container
       id='#Home'
