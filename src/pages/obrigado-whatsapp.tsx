@@ -12,6 +12,7 @@ export default function Contact() {
   useEffect(() => {
 
     const emailData = { name, number }
+    console.log(emailData)
 
     if (name != undefined && number != undefined) {
 
