@@ -8,7 +8,7 @@ export default async (req,res) => {
    const body = JSON.parse(req.body)
    
    const message = `
-   E-mail recebido via clubedopassaporte.com.br: \r\n\r\n
+   E-mail recebido via visto.clubedopassaporte.com.br: \r\n\r\n
    Nome: ${body.name}\r\n
    Número: ${body.number}\r\n
    `
