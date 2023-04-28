@@ -106,7 +106,7 @@ export function LifeQuality() {
                                                         fontSize='0.9rem'
                                                         textTransform='uppercase'
                                                     >
-                                                        Clique aqui para falar conosco
+                                                        CLIQUE PARA SOLICITAR SEU E-BOOK
                                                     </Text>
 
                                                 </Flex>

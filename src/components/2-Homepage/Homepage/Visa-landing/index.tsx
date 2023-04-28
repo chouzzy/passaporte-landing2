@@ -41,7 +41,7 @@ export function VisaLanding() {
    const [data, setData] = useState({})
    const { isOpen, onOpen, onClose, onToggle } = useDisclosure()
    const title = <> Essa é a chance de ouro para brasileiros irem  morar em um  <b style={{ color: '#4ca7a1', fontWeight: '300' }}> país de 1º Mundo </b> </>
-   const ebookButtonText = <> <b> Clique aqui </b> para saber como aproveitar essa oportunidade! </>
+   const ebookButtonText = <> <b> Clique </b> para receber o Ebook Essencial para ir p/ Portugal </>
 
    function handleVisaDetails(visaItem) {
       setData(visaItem)

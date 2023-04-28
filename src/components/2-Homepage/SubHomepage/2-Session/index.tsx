@@ -69,8 +69,8 @@ export function OportunitiySession() {
 
                <Popover>
                   <PopoverTrigger>
-                     <Text fontSize={['1.1rem', '1.2rem', '1.2rem']} display='inline' pl={1} _hover={{ textDecoration: 'none', cursor: 'pointer', color: 'clubMoss', transition: '500ms' }} color='#1c928b' >
-                        Clique aqui para saber como aproveitar essa <b>oportunidade!</b>
+                     <Text fontSize={['1.1rem', '1.2rem', '1.2rem']} display='inline' pl={1} _hover={{ textDecoration: 'none', cursor: 'pointer', color: 'clubMoss', transition: '500ms' }} color='#1c928b'>
+                        Clique aqui e <b> receba nosso E-book completo </b>, com tudo o que um brasileiro precisa saber antes de migrar para Portugal!
                      </Text>
                   </PopoverTrigger>
 

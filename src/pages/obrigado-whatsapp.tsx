@@ -53,7 +53,7 @@ export default function Contact() {
           Ficamos felizes pelo seu interesse!
         </Heading>
         <Text color='gray.50' fontWeight={'400'} textAlign='center'>
-          Clique abaixo para falar com um de nossos atendentes
+          Clique abaixo para solicitar o seu <b> E-book! </b>
         </Text>
 
         <Link
