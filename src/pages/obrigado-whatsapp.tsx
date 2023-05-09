@@ -57,7 +57,7 @@ export default function Contact() {
         </Text>
 
         <Link
-          href={`https://wa.me/5511930003574?text=Olá, tudo bem? Meu nome é ${name}, e meu número é ${number}. Acessei o site do Clube do Passaporte e gostaria de falar com um atendente.`}
+          href={`https://wa.me/5511930003574?text=Olá, tudo bem? Meu nome é ${name}, e meu número é ${number}. Acessei o site do Clube do Passaporte e gostaria de receber o e-book que detalha sobre a vida em Portugal!`}
           target='_blank'
           _hover={{ textDecoration: 'none' }}
         >

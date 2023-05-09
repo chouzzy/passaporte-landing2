@@ -36,7 +36,7 @@ export default function WhatsButton() {
     return (
         <>
 
-            {/* <Link href='https://wa.me/5511930003574?text=Olá, tudo bem? Acessei o site do Clube do Passaporte e gostaria de falar com um atendente.' target="_blank"></Link> */}
+            {/* <Link href='https://wa.me/5511930003574?text=Olá, tudo bem? Acessei o site do Clube do Passaporte e gostaria de receber o e-book que detalha sobre a vida em Portugal!' target="_blank"></Link> */}
 
             <Flex bg='#25D366' color="#fffafa"
                 fontSize='1.8rem' borderRadius={'full'} p={4}
