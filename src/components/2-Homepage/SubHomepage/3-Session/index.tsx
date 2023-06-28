@@ -1,4 +1,4 @@
-import { Flex, Input, VStack, Heading, Popover, PopoverArrow, PopoverBody, PopoverCloseButton, PopoverContent, PopoverTrigger, Portal, FormControl, Link, Text } from "@chakra-ui/react";
+import { Flex, Heading, Text } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -6,8 +6,8 @@ import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import 'swiper/css/autoplay';
 import { LineItem } from "./LineItem";
+import { Link as RSlink } from 'react-scroll'
 import { qualityLifeData, lines } from "./Data/QualityLifeData";
-import { BsWhatsapp } from "react-icons/bs";
 import { useRouter } from "next/router";
 
 export function LifeQuality() {
@@ -28,16 +28,16 @@ export function LifeQuality() {
     function RedirectContact(name, number) {
 
         if (typeof window !== "undefined") {
-           router.push({
-              pathname: "obrigado-whatsapp",
-              query: {
-                 name: name,
-                 number: number
-              }
-           })
+            router.push({
+                pathname: "obrigado-whatsapp",
+                query: {
+                    name: name,
+                    number: number
+                }
+            })
         }
         return
-     }
+    }
 
     return (
         <Flex id='#qualityLifeData'
@@ -69,6 +69,7 @@ export function LifeQuality() {
 
                     >
                         {qualityLifeData.title}
+
                     </Heading>
                 </Flex>
 
@@ -86,94 +87,32 @@ export function LifeQuality() {
                                 />
 
                                 {item.id < 6 ?
-                                    <Popover>
-                                        <PopoverTrigger>
-                                            <Flex justifyContent={'center'} alignItems='center'>
-                                                <Flex
-                                                    cursor={'pointer'}
-                                                    py={[2, 2, 2]}
-                                                    px={[4, 4, 6]}
-                                                    borderRadius={18}
+                                    <Flex justifyContent={'center'} alignItems='center'>
+                                        <RSlink to="#contato" spy={true} smooth={true} offset={0} duration={1500}>
 
-                                                    bgColor='clubDarkBlue'
-                                                    boxShadow={'dark-lg'}
-                                                    textAlign={'center'}
-                                                    color='clubAqua'
-                                                    _hover={{ bgColor: 'clubAqua', color: 'white', transition: "1000ms" }}
+                                            <Flex
+                                                cursor={'pointer'}
+                                                py={[2, 2, 2]}
+                                                px={[4, 4, 6]}
+                                                borderRadius={18}
+
+                                                bgColor='clubDarkBlue'
+                                                boxShadow={'dark-lg'}
+                                                textAlign={'center'}
+                                                color='clubAqua'
+                                                _hover={{ bgColor: 'clubAqua', color: 'white', transition: "1000ms" }}
+                                            >
+                                                <Text
+                                                    fontWeight='400'
+                                                    fontSize='0.9rem'
+                                                    textTransform='uppercase'
                                                 >
-                                                    <Text
-                                                        fontWeight='400'
-                                                        fontSize='0.9rem'
-                                                        textTransform='uppercase'
-                                                    >
-                                                        CLIQUE PARA SOLICITAR SEU E-BOOK
-                                                    </Text>
+                                                    CLIQUE PARA SOLICITAR SEU E-BOOK
+                                                </Text>
 
-                                                </Flex>
                                             </Flex>
-                                        </PopoverTrigger>
-
-                                        <Portal>
-                                            <PopoverContent bg='#0f1d27' border='none' p={2} m={2} borderRadius={2}>
-                                                <PopoverArrow bg='#0f1d27' border='none' />
-                                                <PopoverCloseButton color='white' fontSize='0.9rem' p={6} _hover={{ color: 'clubMaldivas' }} />
-                                                <PopoverBody>
-
-                                                    <VStack spacing={3}>
-
-                                                        <Flex color='white' fontWeight={400}>
-                                                            Por favor, preencha as seguintes informações:
-                                                        </Flex>
-
-                                                        <FormControl isRequired>
-                                                            <Input type='name' onChange={(e) => { setName(`${e.target.value}`) }} my={1} variant='outline' bg='white' placeholder='Nome' />
-                                                            <Input type='number' onChange={(e) => { setNumber(`${e.target.value}`) }} my={1} variant='outline' bg='white' placeholder='DDD + número, ex: 11999998888' />
-                                                        </FormControl>
-
-                                                        {
-                                                            linkDisable == true ?
-                                                                <Link
-                                                                    onClick={() => { RedirectContact(name, number) }}
-                                                                    pointerEvents='none'
-                                                                    target="_blank"
-                                                                    _hover={{ textDecoration: 'none' }}>
-                                                                    <Flex
-                                                                        bg='#25D366'
-                                                                        _hover={{ bg: 'clubMaldivas' }}
-                                                                        borderRadius={2}
-                                                                        gap={3}
-                                                                        p={2}
-                                                                        boxShadow='2px 2px 1px #000000bb'
-                                                                    >
-                                                                        <Flex color='white'>Falar conosco </Flex>
-                                                                        <BsWhatsapp fontSize={'1.4rem'} color='white' />
-                                                                    </Flex>
-                                                                </Link>
-                                                                :
-                                                                <Link
-                                                                    onClick={() => { RedirectContact(name, number) }}
-                                                                    pointerEvents='auto'
-                                                                    target="_blank"
-                                                                    _hover={{ textDecoration: 'none' }}>
-                                                                    <Flex
-                                                                        bg='#25D366'
-                                                                        _hover={{ bg: 'clubMaldivas' }}
-                                                                        borderRadius={2}
-                                                                        gap={3}
-                                                                        p={2}
-                                                                        boxShadow='2px 2px 1px #000000bb'
-                                                                    >
-                                                                        <Flex color='white'>Falar conosco </Flex>
-                                                                        <BsWhatsapp fontSize={'1.4rem'} color='white' />
-                                                                    </Flex>
-                                                                </Link>
-                                                        }
-                                                    </VStack>
-
-                                                </PopoverBody>
-                                            </PopoverContent>
-                                        </Portal>
-                                    </Popover>
+                                        </RSlink>
+                                    </Flex>
                                     :
                                     ""
                                 }

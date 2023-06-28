@@ -7,7 +7,7 @@ export const theme = extendTheme({
       body:'Avenir, Heebo'
    },
    colors: {
-     clubAqua:"#1c928b",
+     clubAqua:"#1d968f",
      clubAquaClean:"#7cc3bb",
      clubDark:'#343434',
      clubBlack:'#202020',

@@ -1,12 +1,10 @@
-import { Flex, FormControl, Heading, Input, Link, Popover, PopoverArrow, PopoverBody, PopoverCloseButton, PopoverContent, PopoverTrigger, Portal, Text, useDisclosure, VStack } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import 'swiper/css/scrollbar';
-import 'swiper/css/autoplay';
-import { BsWhatsapp } from "react-icons/bs";
 import { useRouter } from "next/router";
+import { Flex, Heading, Text, useBreakpointValue, useDisclosure, VStack } from "@chakra-ui/react";
+import { Link as RSlink } from 'react-scroll'
+
+import { CardGrid } from "./cards";
+import { CarouselCards } from "./carrouselCards";
 
 
 export function VisaLanding() {
@@ -48,11 +46,29 @@ export function VisaLanding() {
       onToggle()
    }
 
+   const isMobile = useBreakpointValue({
+      base: true,
+      sm: true,
+      md: true,
+      lg: false,
+      xl: false
+   })
+
+   const slides = useBreakpointValue({ base: 1, sm: 1, md: 2, lg: 0, xl: 0 })
+
+
    return (
-      <Flex w='100%' minH={['60vh', '60vh', '40vh']}>
-         <Flex w='100%' p={4} alignItems={'center'} justifyContent='center'>
+      <Flex w='100%' minH={['90vh', '60vh', '40vh']}>
+         <Flex
+            w='100%'
+            p={[1, 4, 4]}
+            gap={8}
+            justifyContent='center'
+            alignItems={'center'}
+            flexDir={'column'}
+         >
             <VStack
-               w={['100%', '88%', '88%', '88%']}
+               w={['100%', '88%', '88%', '90%']}
                p={[0, 0, 0, 4]}
                spacing={[24, 12, 12]}
             >
@@ -67,7 +83,72 @@ export function VisaLanding() {
                   {title}
                </Heading>
 
+               {isMobile ?
+                  <CarouselCards />
+                  :
+                  <CardGrid />
 
+               }
+
+
+            </VStack>
+
+            <RSlink  to="#contato" spy={true} smooth={true} offset={0} duration={1500}>
+               <Flex
+                  p={[2, 2, 3]}
+                  borderRadius={4}
+
+                  cursor={'pointer'}
+
+                  bgGradient='linear(to-br, clubMaldivas, clubAqua)'
+                  boxShadow={'dark-lg'}
+                  textAlign={'center'}
+                  color='white'
+
+                  _hover={{
+                     bgGradient: 'linear(to-br, white, whiteAlpha.900)',
+                     color: 'clubAqua',
+                     transition: "300ms"
+                  }}
+               >
+                  <Text
+                     fontWeight='300'
+                     textAlign={'center'}
+                     fontSize={['0.84rem', '1rem', '1.2rem']}
+                  >
+
+                     {ebookButtonText}
+                  </Text>
+               </Flex>
+            </RSlink>
+         </Flex>
+      </Flex>
+   )
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{/* 
                <Popover>
                   <PopoverTrigger>
                      <Flex>
@@ -153,55 +234,4 @@ export function VisaLanding() {
                      </PopoverContent>
                   </Portal>
                </Popover>
-
-               {/* <Flex border='1px solid white' justifyContent='center'
-            alignItems={'flex-start'} flexDir={['column','column','column','row-reverse']} gap={2}>
-               {isOpen?
-               <VisaModal
-                  isOpen={isOpen}
-                  onClose={onClose}
-                  data={data}
-               />
-               :
-               <Grid templateColumns={'repeat(2, 1fr)'} gap={2}>
-               {vistos.map( visaItem => {
-                  return (
-                     <Flex 
-                     key={visaItem.id}
-                     onClick={() => {handleVisaDetails(visaItem)}}
-                     bgColor='clubDark'
-                     bgImage={visaItem.backgroundSource}
-                     bgPosition='center'
-                     bgSize={'cover'}
-                     _hover={{
-                        opacity:1,
-                        bgImage:'none',
-                        bgColor:'clubMoss',
-                        transition: '1000ms',
-                        cursor: 'pointer'
-                     }}
-                     h={24}
-                     p={4}
-                     >
-                           <Text 
-                              w='100%'
-                              my='auto'
-                              
-                              color='white'
-                              fontWeight={400}
-                              fontSize={'1rem'}
-                           > 
-                           {visaItem.name} 
-                           </Text>
-                     </Flex>
-                  )
-               })}
-               </Grid>
-               }
-            </Flex> */}
-
-            </VStack>
-         </Flex>
-      </Flex>
-   )
-}
+ */}

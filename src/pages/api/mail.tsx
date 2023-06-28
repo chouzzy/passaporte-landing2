@@ -6,11 +6,21 @@ export default async (req,res) => {
    
    let sendTest = 0
    const body = JSON.parse(req.body)
-   
+
    const message = `
    E-mail recebido via visto.clubedopassaporte.com.br: \r\n\r\n
-   Nome: ${body.name}\r\n
-   Número: ${body.number}\r\n
+
+   Nome: ${body.Nome}\r\n
+   discagem: ${body.discagem}\r\n
+   Numero: (${body.prefixo}) ${body.Numero}\r\n
+   Email: ${body.Email}\r\n
+   Previsão de mudança: ${body.MovingDate}\r\n\n
+   Razão de mudança: ${body.MovingReason}\r\n\n
+   Opções que descrevem meu objetivo em Portugal: ${" "}${body.checkedItems.map( item => {
+      return (
+         `<li>${item}</li>`
+      )
+   })} \r\n
    `
    const data = {
       to:'clubedopassaporte@gmail.com',
