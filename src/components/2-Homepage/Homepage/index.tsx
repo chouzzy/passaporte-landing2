@@ -1,9 +1,5 @@
-import { Box, Container, Image } from "@chakra-ui/react";
-import { useEffect, useState } from "react";
+import { Container } from "@chakra-ui/react";
 import { Navbar } from "../../1-Navbar";
-import { Banner } from "../Banner";
-import { ServicePage } from "../ServicePage";
-import { SubHomepage } from "../SubHomepage";
 import { VisaLanding } from "./Visa-landing";
 
 interface HomepageProps {
