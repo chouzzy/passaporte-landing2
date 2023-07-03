@@ -203,7 +203,7 @@ export function Footer() {
                            id='discagem'
                            w='100%'
                            _placeholder={{ color: 'black' }}
-                           placeholder='Digite o período aproximado'
+                           placeholder='Escolha o período aproximado'
                            {...register("MovingDate")}
                            >
                            <option style={{ color: 'black' }}>Próximos 3 meses (Que é o ideal para vocês, né?)</option>
