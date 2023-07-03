@@ -3,7 +3,7 @@ import { Link as RSlink } from 'react-scroll'
 
 const firstSessionData = {
     title: 'Oportunidade de Ouro',
-    subtitle: <>  Portugal <span style={{ color: '#1c928b' }}> precisa urgentemente de trabalhadores </span> e, por isso, abriu uma grande oportunidade que praticamente qualquer brasileiro consegue aproveitar: um visto de trabalho que permite a ida para Portugal legalmente em busca de uma dessas milhares de vagas abertas, em diversas áreas.</>,
+    subtitle: <>  Portugal <span style={{ color: '#1c928b' }}> com sua rica história, um clima ameno e paisagens deslumbrantes, </span> este país encanta a todos. Morar em Portugal significa desfrutar de uma qualidade de vida excepcional, com um sistema de saúde de alto nível, muita segurança e educação de qualidade. Além disso, a cultura acolhedora, o idioma português e a gastronomia deliciosa ajudam com uma fácil adaptação no continente europeu. </>,
     list: [
         "Estudo Genealógico",
         "Aprovação comunitária em Portugal",

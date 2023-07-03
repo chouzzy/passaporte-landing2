@@ -41,7 +41,6 @@ export default function Home() {
     </Head>
     {page}
     <Footer/>
-    <WhatsButton/>
     {/* // Homepage basica até o Como conseguir a Cidadania Portuguesa? - botão descubra se é elegivel indo para contacts
     // serviços (nacionalidade e visto)
     // feedbacks

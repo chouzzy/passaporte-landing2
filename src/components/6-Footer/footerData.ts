@@ -1,3 +1,5 @@
+
+const title = 'Descubra seu visto ideal, e ainda receba "O Guia para brasileiros em Portugal"'
 const formData = {
     title: 'FALE COM O CLUBE DO PASSAPORTE',
     name: 'Nome',
@@ -20,4 +22,4 @@ const checkBoxList = [
 ];
 
 
-export {formData, checkBoxList}
+export {formData, checkBoxList, title}

@@ -4,15 +4,13 @@ import { IoMdCheckmarkCircle } from "react-icons/io"
 
 const qualityLifeIndexData = {
     title: <> O problema é que <b>deixar para amanhã</b> pode ser <b> muito arriscado: </b></>,
-    subtitle: <> Ocorre que, por ser uma oportunidade única de ir morar em um país de primeiro mundo que possui todos os benefícios citados acima, já existem muitos brasileiros interessados e, inclusive, aplicando para o visto.  </>,
+    subtitle: <> Uma oportunidade que não pode ser adiada. Nos últimos tempos, o governo português tem facilitado a regularização da residência de brasileiros de todas as classes sociais, abrindo as portas para uma nova vida neste país encantador. </>,
     info: <>
-        Com o alto número de interessados, especialistas estimam que essa oportunidade não deve durar muito já que, em alguns anos ou mesmo meses, Portugal terá conseguido suprir a sua necessidade de novas pessoas por lá.
+        No entanto, é importante ter em mente que essa janela de oportunidade pode se fechar a qualquer momento. Deixar para amanhã pode ser arriscado, pois nunca sabemos quando as circunstâncias podem mudar.
         <br></br>
         <br></br>
-        É justamente por isso que 2023 é o ano ideal para realizar essa mudança. Se houver um planejamento desde já, e com as informações corretas, as suas chances de sucesso em Portugal são altíssimas!
+        Portanto, aproveite agora essa chance única de construir um futuro promissor em Portugal, onde o encanto da cultura, a qualidade de vida e as possibilidades de crescimento estão ao seu alcance. Não perca essa oportunidade de ouro, pois não há garantias de que ela estará disponível no futuro.
         <br></br>
-        <br></br>
-        Então, para quem se interessa por essa oportunidade de ouro e deseja ter uma vida de cidadão de primeiro mundo, nós preparamos um e-book que vai te guiar durante a sua jornada para Portugal.
 
         
 

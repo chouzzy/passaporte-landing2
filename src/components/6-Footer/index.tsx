@@ -5,7 +5,7 @@ import { BsTelephoneFill } from "react-icons/bs";
 import { IoIosMail } from "react-icons/io";
 import { GiCommercialAirplane } from "react-icons/gi";
 import { Map } from "./map";
-import { checkBoxList, formData } from "./footerData";
+import { checkBoxList, formData, title } from "./footerData";
 
 export function Footer() {
 
@@ -68,7 +68,7 @@ export function Footer() {
                fontWeight='300'
                fontSize='1.8rem'
             >
-               Fale conosco
+               {title}
             </Heading>
          </Flex>
 
@@ -197,12 +197,20 @@ export function Footer() {
                      </FormLabel>
 
                      <InputGroup>
+                        <Select
 
-                        <InputLeftElement pointerEvents='none'>
-                           <GiCommercialAirplane fontSize='1.4rem' color='gray' />
-                        </InputLeftElement>
-
-                        <Input type='text' placeholder='Digite o período aproximado' {...register("MovingDate")} />
+                           isRequired
+                           id='discagem'
+                           w='100%'
+                           _placeholder={{ color: 'black' }}
+                           placeholder='Digite o período aproximado'
+                           {...register("MovingDate")}
+                           >
+                           <option style={{ color: 'black' }}>Próximos 3 meses (Que é o ideal para vocês, né?)</option>
+                           <option style={{ color: 'black' }}>Próximos 6 meses</option>
+                           <option style={{ color: 'black' }}>Próximo 1 ano </option>
+                           <option style={{ color: 'black' }}>Mais de 1 ano </option>
+                        </Select>
                      </InputGroup>
 
                      {/* SELECT OBJECTIVES */}

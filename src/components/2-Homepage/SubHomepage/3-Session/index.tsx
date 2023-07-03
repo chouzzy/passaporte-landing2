@@ -107,7 +107,7 @@ export function LifeQuality() {
                                                     fontSize='0.9rem'
                                                     textTransform='uppercase'
                                                 >
-                                                    CLIQUE PARA SOLICITAR SEU E-BOOK
+                                                    {item.callToAction}
                                                 </Text>
 
                                             </Flex>

@@ -30,7 +30,6 @@ export function CardGrid() {
                             bg: 'clubAquaClean',
                             transform: 'scale(1.08)',
                             color: 'white',
-                            cursor: 'pointer'
                         }}
                     >
 

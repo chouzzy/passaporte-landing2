@@ -68,11 +68,6 @@ export function Hurry() {
                fontSize={['1rem', '1rem', '1rem']}
             >
                {qualityLifeIndexData.info}
-               <RSlink to="#contato" spy={true} smooth={true} offset={0} duration={1500}>
-                  <Text display='inline' pl={1} _hover={{ textDecoration: 'none', cursor: 'pointer', color: 'clubMoss', transition: '500ms' }} color='#1c928b' >
-                     Basta clicar aqui, que você poderá falar com a nossa equipe e solicitar o acesso a esse ebook <b>gratuitamente!</b>
-                  </Text>
-               </RSlink>
             </Box>
 
          </Flex>

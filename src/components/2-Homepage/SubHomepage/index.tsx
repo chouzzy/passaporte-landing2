@@ -73,7 +73,7 @@ export function SubHomepage() {
                            color='white'
                            _hover={{ bg: 'blackAlpha.900', color: 'clubMaldivas', transition: '500ms', px: '10' }}
                         >
-                           Clique para solicitar seu Ebook e saber como aproveitar essa oportunidade de ouro!
+                           Entre em contato para saber mais possibilidades!
                         </Flex>
                      </RSlink>
                   </VStack>
@@ -104,7 +104,7 @@ export function SubHomepage() {
                            color='white'
                            _hover={{ bg: 'blackAlpha.900', color: 'clubMaldivas', transition: '500ms', px: '10' }}
                         >
-                           Clique para solicitar seu Ebook e saber como aproveitar essa oportunidade de ouro!
+                           Descubra o visto ideal para você!
                         </Flex>
                      </RSlink>
                   </VStack>

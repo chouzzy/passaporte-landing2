@@ -1,4 +1,4 @@
-import { Flex, Heading } from "@chakra-ui/react";
+import { Flex, Heading, Text } from "@chakra-ui/react";
 import { UserCircle } from "phosphor-react";
 
 
@@ -16,9 +16,9 @@ const feedbackTitle = (
 );
 
 const ebookButtonText = (
-    <>
-        Clique aqui para receber o Ebook Essencial para ir p/ Portugal
-    </>
+    <Text>
+        Entre em contato com o Clube do Passaporte e <b> descubra seu  visto ideal!</b>
+    </Text>
 );
 
 const lines = [

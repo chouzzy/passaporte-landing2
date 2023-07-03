@@ -10,9 +10,9 @@ const qualityLifeData = {
         {
             title: 'Segurança',
             info: <>
-                Desde 2019 Portugal está nos top 7 países mais seguros do planeta, segundo o GPI (Global Peace Index)
+                Desde 2019 Portugal está nos top 7 países mais seguros do planeta, segundo o GPI (Global Peace Index).
                 <br></br>
-                O baixíssimo índice de criminalidade traz aquela sensação de paz, de deitar a cabeça no travesseiro tranquilo, sem medo do que possa acontecer a você e aos seus filhos. O que, infelizmente, não é uma realidade na maior parte do Brasil, onde as taxas de violência e homicídios crescem a cada ano.
+                O baixíssimo índice de criminalidade traz aquela sensação de paz, de deitar a cabeça no travesseiro tranquilo, sem medo do que possa acontecer a você e aos seus filhos.
             </>
         },
 
@@ -31,7 +31,7 @@ const qualityLifeData = {
             info: <>
                 <Text>
 
-                    Há diversos relatos de brasileiros que contam que conseguiram reduzir o seu custo de vida em 40% quando se mudaram para Portugal, isso porque:
+                    Há diversos relatos de brasileiros que conseguiram reduzir o seu custo de vida em 40% quando se mudaram para Portugal, isso porque:
                 </Text>
                 <List spacing={3}>
 
@@ -74,9 +74,9 @@ const qualityLifeData = {
         {
             title: 'Língua portuguesa e Clima',
             info: <>
-                Nós, brasileiros, já falamos o idioma nativo do país e, portanto, não precisamos pelo processo de aprender uma nova língua, que é muitas vezes bastante difícil.
+                Nós, brasileiros, já falamos o idioma nativo do país e, portanto, não precisamos passar pelo processo de aprender uma nova língua, que é muitas vezes bastante difícil.
                 <br></br>
-                Além disso, Portugal possui um clima mediterrâneo, em que os verões são quentes, mas não tão quentes que sejam desconfortáveis, enquanto os Invernos são suaves, com temperaturas amenas e pouca neve.
+                Além disso, Portugal possui um clima mediterrâneo, em que os verões são quentes, mas não tão quentes que sejam desconfortáveis, enquanto os invernos são suaves, com temperaturas amenas e pouca neve.
             </>
         },
     ]
@@ -86,32 +86,38 @@ const lines = [
     {
         id: 1, image: 'static/img/qualityLife/safety.png',
         title: qualityLifeData.slides[0].title,
-        info: qualityLifeData.slides[0].info
+        info: qualityLifeData.slides[0].info,
+        callToAction: 'Entre em contato com o Clube do Passaporte e descubra seu visto ideal'
     },
     {
         id: 2, image: 'static/img/qualityLife/moneypower.png',
         title: qualityLifeData.slides[1].title,
-        info: qualityLifeData.slides[1].info
+        info: qualityLifeData.slides[1].info,
+        callToAction: 'Descubra o visto ideal para você'
     },
     {
         id: 3, image: 'static/img/qualityLife/savings.png',
         title: qualityLifeData.slides[2].title,
-        info: qualityLifeData.slides[2].info
+        info: qualityLifeData.slides[2].info,
+        callToAction: 'Entre em contato para saber mais possibilidades'
     },
     {
         id: 4, image: 'static/img/qualityLife/job.png',
         title: qualityLifeData.slides[3].title,
-        info: qualityLifeData.slides[3].info
+        info: qualityLifeData.slides[3].info,
+        callToAction: 'Descubra o visto ideal para você'
     },
     {
         id: 5, image: 'static/img/qualityLife/train.png',
         title: qualityLifeData.slides[4].title,
-        info: qualityLifeData.slides[4].info
+        info: qualityLifeData.slides[4].info,
+        callToAction: 'Entre em contato com o Clube do Passaporte e descubra seu visto ideal'
     },
     {
         id: 6, image: 'static/img/qualityLife/beach.png',
         title: qualityLifeData.slides[5].title,
-        info: qualityLifeData.slides[5].info
+        info: qualityLifeData.slides[5].info,
+        callToAction: 'Descubra o visto ideal para você'
     },
 ]
 

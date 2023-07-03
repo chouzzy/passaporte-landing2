@@ -50,7 +50,7 @@ const vistos: vistoProps[] = [
    {
       id: 6,
       title: 'Participação em programa de voluntariado',
-      name: 'Caso você vá para o Portugal para trabalhar de forma voluntária, esse Visto é necessário para que você chegue de forma regular e possa contribuir com as causas que transformam vidas.',
+      name: 'Caso você vá para Portugal para trabalhar de forma voluntária, esse Visto é necessário para que você chegue de forma regular e possa contribuir com as causas que transformam vidas.',
       icon: <FcLibrary size={72} />,
       backgroundSource: 'static/img/visa-5.jpg'
    },
