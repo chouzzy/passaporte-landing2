@@ -16,7 +16,7 @@ const vistos: vistoProps[] = [
       id: 1,
       title: 'Estude em Portugal',
       name: 'Imersão acadêmica e cursos em Portugal: Se você já tem alguma carta de aceite ou quer buscar um curso para estudar em Portugal, conquiste o Visto de Estudo e abra portas para o seu futuro promissor.',
-      icon: <FcSearch size={72} />,
+      icon: <FcGraduationCap size={72} />,
       backgroundSource: 'static/img/visa-8.jpg'
    },
    {
@@ -44,7 +44,7 @@ const vistos: vistoProps[] = [
       id: 5,
       title: 'Procura de Trabalho',
       name: 'Esse é o Visto para você que ainda não tem um contrato de trabalho em Portugal, mas deseja explorar novas oportunidades e adentrar de cabeça no sonho de viver em terras lusitanas conquistando por lá o seu espaço no mercado de trabalho e uma qualidade de vida melhor.',
-      icon: <FcGraduationCap size={72} />,
+      icon:  <FcSearch size={72} />,
       backgroundSource: 'static/img/visa-4.jpg'
    },
    {

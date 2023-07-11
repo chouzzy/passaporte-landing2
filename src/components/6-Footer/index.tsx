@@ -206,7 +206,7 @@ export function Footer() {
                            placeholder='Escolha o período aproximado'
                            {...register("MovingDate")}
                            >
-                           <option style={{ color: 'black' }}>Próximos 3 meses (Que é o ideal para vocês, né?)</option>
+                           <option style={{ color: 'black' }}>Próximos 3 meses</option>
                            <option style={{ color: 'black' }}>Próximos 6 meses</option>
                            <option style={{ color: 'black' }}>Próximo 1 ano </option>
                            <option style={{ color: 'black' }}>Mais de 1 ano </option>
