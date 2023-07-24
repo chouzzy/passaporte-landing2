@@ -7,25 +7,6 @@ import { BsWhatsapp } from "react-icons/bs";
 export default function Contact() {
 
   const router = useRouter()
-  const { name, number } = router.query
-
-  useEffect(() => {
-
-    const emailData = { name, number }
-
-    if (name != undefined && number != undefined) {
-
-      setTimeout(() => {
-
-        fetch('/api/mail', {
-          method: 'post',
-          body: JSON.stringify(emailData)
-        })
-
-      }, 2000)
-
-    }
-  })
 
   return (
     <Container
@@ -52,28 +33,17 @@ export default function Contact() {
         <Heading color='gray.50' fontWeight={'300'} textAlign='center'>
           Ficamos felizes pelo seu interesse!
         </Heading>
-        <Text color='gray.50' fontWeight={'400'} textAlign='center'>
-          Clique abaixo para solicitar o seu <b> E-book! </b>
-        </Text>
 
         <Link
-          href={`https://wa.me/5511930003574?text=Olá, tudo bem? Meu nome é ${name}, e meu número é ${number}. Acessei o site do Clube do Passaporte e gostaria de receber o e-book que detalha sobre a vida em Portugal!`}
+          href={`https://drive.google.com/u/1/uc?id=12uGuaKzvIarEhreOaGC-Zkc8a7uFyJHn&export=download`}
           target='_blank'
           _hover={{ textDecoration: 'none' }}
         >
-          <Flex
-            bg='#25D366'
-            fontSize='1.2rem'
-            _hover={{ bg: 'clubMaldivas' }}
-            borderRadius={6}
-            gap={3}
-            p={2}
-            boxShadow='2px 2px 1px #000000bb'
-          >
-            <Text color='gray.50'> FALE CONOSCO </Text>
-            <BsWhatsapp fontSize={'1.4rem'} color='white' />
-          </Flex>
+          <Button bg={'clubMaldivas'} color='gray.50' fontWeight={'400'} textAlign='center' >
+            Clique aqui para solicitar o seu E-book!
+          </Button>
         </Link>
+
       </Flex>
     </Container>
   )

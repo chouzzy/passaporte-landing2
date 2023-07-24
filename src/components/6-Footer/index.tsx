@@ -6,6 +6,7 @@ import { IoIosMail } from "react-icons/io";
 import { GiCommercialAirplane } from "react-icons/gi";
 import { Map } from "./map";
 import { checkBoxList, formData, title } from "./footerData";
+import { useRouter } from "next/router";
 
 export function Footer() {
 
@@ -33,6 +34,8 @@ export function Footer() {
       formState: { errors, isSubmitting },
    } = useForm()
 
+   const router = useRouter()
+
    function onSubmit(values) {
       setDisable(true)
       setColor('clubCigar')
@@ -46,6 +49,12 @@ export function Footer() {
                body: JSON.stringify(emailData)
             })
          }, 2000)
+
+         if (typeof window !== "undefined") {
+            router.push({
+                pathname: "obrigado-whatsapp",
+            })
+        }
       })
    }
 
