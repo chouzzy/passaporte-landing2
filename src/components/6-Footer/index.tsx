@@ -284,6 +284,7 @@ export function Footer() {
                      </InputGroup>
 
                      <Button
+                        id='#submitButton'
                         borderRadius={3}
                         mt={8}
                         w='100%'

@@ -30,8 +30,6 @@ export default class MyDocument extends Document {
                <link rel="shortcut icon" href="/static/img/logo.png" />
             </Head>
             <body>
-               <Main />
-               <NextScript />
                <noscript
                   dangerouslySetInnerHTML={{
                      __html: `
@@ -39,6 +37,8 @@ export default class MyDocument extends Document {
                         height="0" width="0" style="display:none;visibility:hidden"></iframe>`,
                   }}
                />
+               <Main />
+               <NextScript />
          </body>
          </Html >
       )
