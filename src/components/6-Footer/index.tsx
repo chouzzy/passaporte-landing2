@@ -1,32 +1,54 @@
-import { Button, Center, Checkbox, CheckboxGroup, Divider, Flex, FormControl, FormLabel, Heading, Input, InputGroup, InputLeftElement, InputRightElement, Link, Select, Text, Textarea, VStack } from "@chakra-ui/react";
+import { Button, Center, Checkbox, CheckboxGroup, Divider, Flex, FormControl, FormLabel, Heading, HStack, Image, Input, InputGroup, InputLeftElement, InputRightElement, Link, Select, Text, Textarea, VStack } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { BsTelephoneFill } from "react-icons/bs";
 import { IoIosMail } from "react-icons/io";
 import { GiCommercialAirplane } from "react-icons/gi";
 import { Map } from "./map";
-import { checkBoxList, formData, title } from "./footerData";
+import { checkBoxList, formData, subObjectiveQuestion, title } from "./footerData";
 import { useRouter } from "next/router";
+import { Email } from "./Form/Email";
+import { Name } from "./Form/Name";
+import { CidadeDeMoradia } from "./Form/CidadeDeMoradia";
+import { ObjetivoEmPortugal } from "./Form/ObjetivoEmPortugal";
+import { SubObjetivoEmPortugal } from "./Form/SubObjetivoEmPortugal";
+import { TempoDeResidencia } from "./Form/TempoDeResidencia";
+import { ImediatoAcompanhado } from "./Form/ImediatoAcompanhado";
+import { DisponibilidadeFinanceira } from "./Form/DisponibilidadeFinanceira";
+import { FormacaoAcademica } from "./Form/FormacaoAcademica";
+import { VisitouPortugal } from "./Form/VisitouPortugal";
+import { PrevisaoMudanca } from "./Form/PrevisaoMudanca";
+import { ProcessoDeVistoIniciado } from "./Form/ProcessoDeVistoIniciado";
+import { AmigoFamiliarResidente } from "./Form/AmigoFamiliarResidente";
+
+
+
+
 
 export function Footer() {
 
    const [color, setColor] = useState('clubMaldivas')
+
    const [disable, setDisable] = useState(false)
+
    const [sentText, setSentText] = useState('Enviar')
-   const [checkedItems, setCheckedItems] = useState([]);    // initialize state for checked items
 
-   const handleCheckboxChange = (event) => {
+   const [objective, setObjective] = useState('');
 
-      const targetValue = event.target.value;
-      const isChecked = event.target.checked;
+   const [outrosTextArea, setOutrosTextArea] = useState('')
 
-      if (isChecked) {
-         setCheckedItems(prevState => [...prevState, targetValue]);
-      } else {
-         setCheckedItems(prevState => prevState.filter(item => item !== targetValue));
-      }
+   const [subObjective, setSubObjetive] = useState({
+      trigger: '',
+      question: '',
+      alternative: ''
+   });
 
-   };
+   const [selectedObjective, setSelectedObjective] = useState('')
+
+   const [imediatamenteAcompanhado, setImediatamenteAcompanhado] = useState('')
+   const [imediatamenteAcompanhadoTextArea, setImediatamenteAcompanhadoTextArea] = useState('')
+
+   const [amigoFamiliarResidenteRadio, setAmigoFamiliarResidenteRadio] = useState('')
 
    const {
       handleSubmit,
@@ -40,7 +62,7 @@ export function Footer() {
       setDisable(true)
       setColor('clubCigar')
       setSentText('Enviado ✔')
-      const emailData = { ...values, checkedItems }
+      const emailData = { ...values, objective, outrosTextArea, selectedObjective, imediatamenteAcompanhado, imediatamenteAcompanhadoTextArea, amigoFamiliarResidenteRadio }
 
       return new Promise(() => {
          setTimeout(() => {
@@ -52,11 +74,25 @@ export function Footer() {
 
          if (typeof window !== "undefined") {
             router.push({
-                pathname: "obrigado-whatsapp",
+               pathname: "obrigado-whatsapp",
             })
-        }
+         }
       })
    }
+
+   useEffect(() => {
+
+      if (objective === 'Trabalhar') {
+         setSubObjetive(subObjectiveQuestion.trabalhar)
+      }
+      if (objective === 'Estudar') {
+         setSubObjetive(subObjectiveQuestion.estudar)
+      }
+      if (objective === 'Empreender' || objective === 'Investir') {
+         setSubObjetive(subObjectiveQuestion.independente)
+      }
+
+   }, [objective, selectedObjective])
 
    return (
       <Flex
@@ -68,30 +104,30 @@ export function Footer() {
          bgRepeat='repeat-x'
          flexDir="column"
          justifyContent='center'
-         py={8}
+         pt={12}
          px={2}
       >
-         <Flex w='100%'>
+         <Flex w='100%' flexDir={'column'}>
             <Heading
                mx='auto'
+               textAlign={'center'}
                fontWeight='300'
-               fontSize='1.8rem'
+               fontSize={['1.4rem','1.8rem', '2.2rem']}
+               px={4}
             >
                {title}
             </Heading>
+            
          </Flex>
 
-         <Flex w='100%' flexDir={['column-reverse', 'column-reverse', 'column-reverse', 'row']}>
+         <Flex flexDir={['column-reverse', 'column-reverse', 'column-reverse', 'column-reverse']}>
 
             {/* MAPA */}
             <Map />
-            {/* FORM */}
-            <Center my='auto' height={[0,0,0 , 600]}>
-               <Divider orientation='vertical' />
-            </Center>
+
             <Flex
                id='#formulario'
-               w='100%'
+               mx='auto' w='100%'
                justifyContent='center'
                px={[8, 8, 16, 16]}
                py={[8, 8, 16, 12]}
@@ -101,187 +137,82 @@ export function Footer() {
                   <form onSubmit={handleSubmit(onSubmit)}>
 
                      {/* NOME */}
-                     <FormLabel
-                        fontWeight='400'
-                        pl={2}
-                        pt={4}
-                        mb={1}
-                        htmlFor='first-name'
-                     >
-                        {formData.name}
-                     </FormLabel>
-
-                     <Input
-                        p={2}
-                        placeholder='Digite seu nome'
-                        {...register("Nome")}
-                     />
-
-                     {/* TELEFONE */}
-                     <FormLabel
-                        fontWeight='400'
-                        pl={2}
-                        pt={4}
-                        mb={1}
-                        htmlFor='telephone'
-                     >
-                        {formData.number}
-                     </FormLabel>
-
-                     <InputGroup gap={1}>
-
-                        {/* SELECT DDD ou DDI */}
-                        <Select
-                           isRequired
-                           id='discagem'
-                           w='300px'
-                           _placeholder={{ color: 'black' }}
-                           placeholder='Discagem'
-                           {...register("discagem")}>
-                           <option style={{ color: 'black' }}>DDD</option>
-                           <option style={{ color: 'black' }}>DDI</option>
-                        </Select>
-
-                        {/* INPUT DO PREFIXO */}
-                        <Input
-                           isRequired={true}
-                           type='tel'
-                           w='180px'
-                           minLength={2}
-                           maxLength={3}
-                           placeholder='DDD/DDI'
-                           p={2}
-                           {...register("prefixo")}
-                        />
-
-                        {/* INPUT DO NÚMERO */}
-                        <Input
-                           type='tel'
-                           minLength={8}
-                           maxLength={9}
-                           placeholder='Ex: 912345678 ou 23456789'
-                           {...register("Numero")}
-                        />
-
-                        {/* ICON DO TELEFONE */}
-                        <InputRightElement pointerEvents='none'>
-                           <BsTelephoneFill
-                              fontSize='1.1rem'
-                              color='gray'
-                           />
-                        </InputRightElement>
-
-                     </InputGroup>
+                     <Name register={register} />
 
                      {/* EMAIL */}
-                     <FormLabel
-                        fontWeight='400'
-                        pl={2}
-                        pt={4}
-                        mb={1}
-                        htmlFor='e-mail'
-                     >
-                        {formData.email}
-                     </FormLabel>
+                     <Email register={register} />
 
-                     <InputGroup>
+                     {/* CidadeDeMoradia */}
+                     <CidadeDeMoradia register={register} />
 
-                        {/* INPUT DO EMAIL */}
-                        <InputLeftElement pointerEvents='none'>
-                           <IoIosMail fontSize='1.4rem' color='gray' />
-                        </InputLeftElement>
+                     {/* OBJETIVO EM PORTUGAL */}
+                     <ObjetivoEmPortugal
+                        objective={objective}
+                        setObjective={setObjective}
+                        outrosTextArea={outrosTextArea}
+                        setOutrosTextArea={setOutrosTextArea}
+                        register={register}
+                     />
 
-                        <Input type='mail' placeholder='Digite seu e-mail' {...register("Email")} />
-                     </InputGroup>
+                     {/* SUBPERGUNTA OBJETIVO EM PORTUGAL*/}
+                     {objective != '' ?
+                        <SubObjetivoEmPortugal
+                           objective={objective}
+                           subObjectiveContent={subObjective}
+                           setSelectedObjective={setSelectedObjective}
 
-                     {/* MOVING DATE */}
-                     <FormLabel
-                        fontWeight='400'
-                        pl={2}
-                        pt={4}
-                        mb={1}
-                        htmlFor='e-mail'
-                     >
-                        {formData.movingDate}
-                     </FormLabel>
-
-                     <InputGroup>
-                        <Select
-
-                           isRequired
-                           id='discagem'
-                           w='100%'
-                           _placeholder={{ color: 'black' }}
-                           placeholder='Escolha o período aproximado'
-                           {...register("MovingDate")}
-                           >
-                           <option style={{ color: 'black' }}>Próximos 3 meses</option>
-                           <option style={{ color: 'black' }}>Próximos 6 meses</option>
-                           <option style={{ color: 'black' }}>Próximo 1 ano </option>
-                           <option style={{ color: 'black' }}>Mais de 1 ano </option>
-                        </Select>
-                     </InputGroup>
-
-                     {/* SELECT OBJECTIVES */}
-                     <FormLabel
-                        fontWeight='400'
-                        pl={2}
-                        pt={4}
-                        mb={1}
-                        htmlFor='e-mail'
-                     >
-                        Qual das seguintes opções melhor descreve o seu objetivo em Portugal?
-                     </FormLabel>
-
-                     <InputGroup>
-                        <CheckboxGroup
-                           colorScheme='cyan'
-                        >
-                           <VStack
-                              alignItems={'left'}
-                              p={4}
-                              spacing={[1, 5]}
-                              direction={['column', 'row']}
-                           >
-                              {/* FORMULÁRIO CheckBox */}
-                              {checkBoxList.map(checkBoxItem => {
-                                 return (
-                                    <Checkbox
-                                       key={checkBoxItem}
-                                       value={checkBoxItem}
-                                       onChange={handleCheckboxChange}    // call onChange function
-                                       isRequired={false}
-                                       isChecked={checkedItems.includes(checkBoxItem)}    // set isChecked prop to reflect state
-                                    >
-                                       {checkBoxItem}
-                                    </Checkbox>
-                                 )
-                              })}
-                           </VStack>
-                        </CheckboxGroup>
-                     </InputGroup>
-
-                     {/* MOVING REASON TEXT */}
-                     <FormLabel
-                        fontWeight='400'
-                        pl={2}
-                        pt={4}
-                        mb={1}
-                        htmlFor='e-mail'
-                     >
-                        {formData.movingReason}
-                     </FormLabel>
-
-                     <InputGroup>
-
-                        <Textarea
-                           bgColor='whiteAlpha.800'
-                           color='gray.900'
-                           placeholder='Digite aqui'
-                           {...register("MovingReason")}
                         />
+                        :
+                        ''
+                     }
 
-                     </InputGroup>
+                     {/* TEMPO DE RESIDÊNCIA */}
+                     <TempoDeResidencia
+                        register={register}
+                     />
+
+                     {/* OBJETIVO EM PORTUGAL */}
+                     <ImediatoAcompanhado
+                        imediatamenteAcompanhado={imediatamenteAcompanhado}
+                        setImediatamenteAcompanhado={setImediatamenteAcompanhado}
+                        imediatamenteAcompanhadoTextArea={imediatamenteAcompanhadoTextArea}
+                        setImediatamenteAcompanhadoTextArea={setImediatamenteAcompanhadoTextArea}
+                        register={register}
+                     />
+
+                     {/* DISPONIBILIDADE FINANCEIRA */}
+                     <DisponibilidadeFinanceira
+                        register={register}
+                     />
+
+                     {/* FORMAÇÃO ACADEMICA */}
+                     <FormacaoAcademica
+                        register={register}
+                     />
+
+                     {/* VISITOU PORTUGAL */}
+                     <VisitouPortugal
+                        register={register}
+                     />
+
+
+                     {/* PREVISÃO DE MUDANÇA PARA PORTUGAL */}
+                     <PrevisaoMudanca
+                        register={register}
+                     />
+
+                     {/* INICIOU PROCESSO DE VISTO*/}
+                     <ProcessoDeVistoIniciado
+                        register={register}
+                     />
+
+                     {/* TEM AMIGO OU FAMILIAR EM PORTUGAL */}
+                     <AmigoFamiliarResidente
+                        register={register}
+                        amigoFamiliarResidenteRadio={amigoFamiliarResidenteRadio}
+                        setAmigoFamiliarResidenteRadio={setAmigoFamiliarResidenteRadio}
+                     />
+
 
                      <Button
                         id='#submitButton'
@@ -305,6 +236,9 @@ export function Footer() {
                </FormControl>
             </Flex>
          </Flex>
+
+
+         {/* FOOTER */}
          <Flex w='100%'>
             <Flex display='inline' mx='auto' fontWeight='300' fontSize='0.7rem'>
                desenvolvido por
