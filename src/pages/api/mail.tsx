@@ -7,8 +7,6 @@ export default async (req, res) => {
    let sendTest = 0
    const body = JSON.parse(req.body)
 
-   console.log(body)
-
    const message = `
 E-mail recebido via visto.clubedopassaporte.com.br: \r
 \r
