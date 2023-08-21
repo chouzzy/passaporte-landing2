@@ -20,6 +20,7 @@ import { VisitouPortugal } from "./Form/VisitouPortugal";
 import { PrevisaoMudanca } from "./Form/PrevisaoMudanca";
 import { ProcessoDeVistoIniciado } from "./Form/ProcessoDeVistoIniciado";
 import { AmigoFamiliarResidente } from "./Form/AmigoFamiliarResidente";
+import { SubObjetivoEmPortugalQ2 } from "./Form/SubObjetivoEmPortugalQ2";
 
 
 
@@ -43,7 +44,14 @@ export function Footer() {
       alternative: ''
    });
 
+   const [subObjective2, setSubObjetive2] = useState({
+      trigger: '',
+      question: '',
+      alternative: ''
+   });
+
    const [selectedObjective, setSelectedObjective] = useState('')
+   const [selectedObjective2, setSelectedObjective2] = useState('')
 
    const [imediatamenteAcompanhado, setImediatamenteAcompanhado] = useState('')
    const [imediatamenteAcompanhadoTextArea, setImediatamenteAcompanhadoTextArea] = useState('')
@@ -62,7 +70,7 @@ export function Footer() {
       setDisable(true)
       setColor('clubCigar')
       setSentText('Enviado ✔')
-      const emailData = { ...values, objective, outrosTextArea, selectedObjective, imediatamenteAcompanhado, imediatamenteAcompanhadoTextArea, amigoFamiliarResidenteRadio }
+      const emailData = { ...values, objective, outrosTextArea, subObjective, selectedObjective, selectedObjective2, imediatamenteAcompanhado, imediatamenteAcompanhadoTextArea, amigoFamiliarResidenteRadio }
 
       return new Promise(() => {
          setTimeout(() => {
@@ -112,12 +120,12 @@ export function Footer() {
                mx='auto'
                textAlign={'center'}
                fontWeight='300'
-               fontSize={['1.4rem','1.8rem', '2.2rem']}
+               fontSize={['1.4rem', '1.8rem', '2.2rem']}
                px={4}
             >
                {title}
             </Heading>
-            
+
          </Flex>
 
          <Flex flexDir={['column-reverse', 'column-reverse', 'column-reverse', 'column-reverse']}>
@@ -145,6 +153,64 @@ export function Footer() {
                      {/* CidadeDeMoradia */}
                      <CidadeDeMoradia register={register} />
 
+
+                     {/* TELEFONE */}
+                     <FormLabel
+                        fontWeight='400'
+                        pl={2}
+                        pt={4}
+                        mb={1}
+                        htmlFor='telephone'
+                     >
+                        {formData.number}
+                     </FormLabel>
+
+                     <InputGroup gap={1}>
+
+                        {/* SELECT DDD ou DDI */}
+                        <Select
+                           isRequired
+                           id='discagem'
+                           w='300px'
+                           _placeholder={{ color: 'black' }}
+                           placeholder='Discagem'
+                           {...register("discagem")}>
+                           <option style={{ color: 'black' }}>DDD</option>
+                           <option style={{ color: 'black' }}>DDI</option>
+                        </Select>
+
+                        {/* INPUT DO PREFIXO */}
+                        <Input
+                           isRequired={true}
+                           type='tel'
+                           w='180px'
+                           minLength={2}
+                           maxLength={3}
+                           placeholder='DDD/DDI'
+                           p={2}
+                           {...register("prefixo")}
+                        />
+
+                        {/* INPUT DO NÚMERO */}
+                        <Input
+                           type='tel'
+                           minLength={8}
+                           maxLength={9}
+                           placeholder='Ex: 912345678 ou 23456789'
+                           {...register("Numero")}
+                        />
+
+                        {/* ICON DO TELEFONE */}
+                        <InputRightElement pointerEvents='none'>
+                           <BsTelephoneFill
+                              fontSize='1.1rem'
+                              color='gray'
+                           />
+                        </InputRightElement>
+
+                     </InputGroup>
+
+                     
                      {/* OBJETIVO EM PORTUGAL */}
                      <ObjetivoEmPortugal
                         objective={objective}
@@ -156,10 +222,24 @@ export function Footer() {
 
                      {/* SUBPERGUNTA OBJETIVO EM PORTUGAL*/}
                      {objective != '' ?
-                        <SubObjetivoEmPortugal
+                        <>
+                           <SubObjetivoEmPortugal
+                              objective={objective}
+                              subObjectiveContent={subObjective}
+                              setSelectedObjective={setSelectedObjective}
+
+                           />
+
+                        </>
+                        :
+                        ''
+                     }
+
+                     {objective == 'Trabalhar' ?
+                        <SubObjetivoEmPortugalQ2
                            objective={objective}
                            subObjectiveContent={subObjective}
-                           setSelectedObjective={setSelectedObjective}
+                           setSelectedObjective={setSelectedObjective2}
 
                         />
                         :

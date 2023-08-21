@@ -27,7 +27,7 @@ export function ImediatoAcompanhado({
       const targetValue = event.target.value;
       const isChecked = event.target.checked;
 
-      if (targetValue === 'Sim') {
+      if (targetValue === 'Sim (especifique, por favor)') {
          setTextBox(!textBox)
       } else {
          setTextBox(false)

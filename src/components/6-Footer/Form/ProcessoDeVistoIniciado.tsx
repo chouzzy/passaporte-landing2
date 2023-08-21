@@ -24,7 +24,7 @@ export function ProcessoDeVistoIniciado({ register }: { register: UseFormReturn[
  
                bg={'white'}
                color='black'
-               placeholder='Ex: Sim, iniciei o procsso de cidadania portuguesa em outubro de 2013, mas acabei desistindo.'
+               placeholder='Ex: Sim, iniciei o processo de cidadania portuguesa em outubro de 2013, mas acabei desistindo.'
                {...register("Processo de visto foi iniciado")}
             />
          </InputGroup>

@@ -29,46 +29,53 @@ export function SubObjetivoEmPortugal({ objective, subObjectiveContent, setSelec
    return (
       <>
          {/* OBJETIVO EM PORTUGAL */}
-         <FormLabel
-            fontWeight='400'
-            pl={2}
-            pt={4}
-            mb={1}
-            htmlFor='e-mail'
-         >
-            {subObjectiveContent.question}
-         </FormLabel>
-         <InputGroup>
-            <RadioGroup>
-               <VStack
-                  alignItems={'left'}
-                  p={4}
-                  spacing={[1, 5]}
-                  direction={['column', 'row']}
+         {subObjectiveContent.trigger == '' ?
+            ''
+            :
+
+            <>
+               < FormLabel
+                  fontWeight='400'
+                  pl={2}
+                  pt={4}
+                  mb={1}
+                  htmlFor='e-mail'
                >
+                  {subObjectiveContent.question}
+               </FormLabel >
+               <InputGroup>
+                  <RadioGroup>
+                     <VStack
+                        alignItems={'left'}
+                        p={4}
+                        spacing={[1, 5]}
+                        direction={['column', 'row']}
+                     >
 
-                  <Radio
-                     onChange={handleCheckboxChange}
-                     value={'Sim'}
-                  >
-                     Sim
-                  </Radio>
-                  <Radio
-                     onChange={handleCheckboxChange}
-                     value={'Não'}
-                  >
-                     Não
-                  </Radio>
-                  <Radio
-                     onChange={handleCheckboxChange}
-                     value={subObjectiveContent.alternative}
-                  >
-                     {subObjectiveContent.alternative}
-                  </Radio>
+                        <Radio
+                           onChange={handleCheckboxChange}
+                           value={'Sim'}
+                        >
+                           Sim
+                        </Radio>
+                        <Radio
+                           onChange={handleCheckboxChange}
+                           value={'Não'}
+                        >
+                           Não
+                        </Radio>
+                        <Radio
+                           onChange={handleCheckboxChange}
+                           value={subObjectiveContent.alternative}
+                        >
+                           {subObjectiveContent.alternative}
+                        </Radio>
 
-               </VStack>
-            </RadioGroup>
-         </InputGroup >
+                     </VStack>
+                  </RadioGroup>
+               </InputGroup>
+            </>
+         }
       </>
    )
 }

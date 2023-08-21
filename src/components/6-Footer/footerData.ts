@@ -2,7 +2,10 @@
 export interface subObjectiveQuestionProps {
     trigger: string,
     question: string,
-    alternative: string
+    alternative: string,
+    subTrigger?: string,
+    subQuestion?: string,
+    subAlternative?: string
 }
 
 const checkBoxList = [
@@ -43,12 +46,15 @@ const subObjectiveQuestion = {
     trabalhar: {
         trigger: 'Trabalhar',
         question: 'Se você deseja trabalhar em Portugal, você já possui oferta de emprego de uma empresa portuguesa?',
-        alternative: 'Ainda estou procurando emprego.'
+        alternative: 'Ainda estou procurando emprego.',
+        subTrigger: 'Trabalhar',
+        subQuestion: 'Se você pretende trabalhar de forma independente (autônomo/freelancer), você já possui contrato ou proposta de prestação de serviços para empresas em Portugal?',
+        subAlternative: 'Ainda estou procurando oportunidades.'
     },
     independente: {
-        trigger: 'Empreender',
-        question: 'Se você pretende trabalhar de forma independente (autônomo/freelancer), você já possui contrato ou proposta de prestação de serviços para empresas em Portugal?',
-        alternative: 'Ainda estou procurando oportunidades.'
+        trigger: '',
+        question: '',
+        alternative: ''
     },
     estudar: {
         trigger: 'Estudar',
@@ -72,7 +78,7 @@ const tempoDeResidenciaData = {
 
 // IMEDIATAMENTE ACOMPANHADO
 const imediatoAcompanhadoRadioCheck = [
-    { id: '#yes', item: 'Sim' },
+    { id: '#yes', item: 'Sim (especifique, por favor)' },
     { id: '#no', item: 'Não' }
 ]
 
