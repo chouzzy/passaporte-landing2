@@ -1,4 +1,4 @@
 User-Agent: *
 Allow: /
 
-Sitemap:https://visto.clubedopassaporte.com/api/sitemap
+Sitemap:https://landing.clubedopassaporte.com/api/sitemap
