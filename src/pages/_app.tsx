@@ -23,8 +23,9 @@ function MyApp({Component, pageProps}: AppProps) {
   
           router.events.on('routeChangeComplete', () => {
             ReactPixel.pageView()
+            ReactPixel.fbq('track', 'Lead');
           })
-        })
+        }) 
     }, [router.events])
    return (
       <>

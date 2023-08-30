@@ -43,7 +43,8 @@ export default class MyDocument extends Document {
                s.parentNode.insertBefore(t,s)}(window, document,'script',
                'https://connect.facebook.net/en_US/fbevents.js');
                fbq('init', '700239298517091');
-               fbq('track', 'PageView');` }}
+               fbq('track', 'PageView')
+               fbq('track', 'Lead');` }}
                   />
                   <noscript dangerouslySetInnerHTML={{
                      __html: `<img height="1" width="1" style="display:none"
