@@ -1,9 +1,11 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document'
+import { useRouter } from 'next/router';
 import React from 'react'
 
 
 export default class MyDocument extends Document {
-   render() {
+   render() {  
+
       return (
          <Html>
             <Head>
@@ -33,6 +35,7 @@ export default class MyDocument extends Document {
 
                <React.Fragment>
                   {/* <!-- Facebook Pixel Code --> */}
+                     <>
                   <script dangerouslySetInnerHTML={{
                      __html: `!function(f,b,e,v,n,t,s)
                {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -50,8 +53,9 @@ export default class MyDocument extends Document {
                      __html: `<img height="1" width="1" style="display:none"
                src="https://www.facebook.com/tr?id=700239298517091&ev=PageView&noscript=1" />` }}
                   />
+                  </>
                   {/* <!-- End Facebook Pixel Code --> */}
-                  {/* <!-- Facebook Pixel Code --> */}
+                  {/* <!-- Tag Manager Code --> */}
                   <script dangerouslySetInnerHTML={{
                      __html: `
                (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -61,7 +65,7 @@ export default class MyDocument extends Document {
                })(window,document,'script','dataLayer','GTM-TGLDLST');
                ` }}
                   />
-                  {/* <!-- End Facebook Pixel Code --> */}
+                  {/* <!-- End Tag Manager Code --> */}
                </React.Fragment>
 
 
