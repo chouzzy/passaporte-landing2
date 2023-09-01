@@ -35,7 +35,7 @@ export default class MyDocument extends Document {
 
                <React.Fragment>
                   {/* <!-- Facebook Pixel Code --> */}
-                     <>
+                     {/* <>
                   <script dangerouslySetInnerHTML={{
                      __html: `!function(f,b,e,v,n,t,s)
                {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -53,7 +53,7 @@ export default class MyDocument extends Document {
                      __html: `<img height="1" width="1" style="display:none"
                src="https://www.facebook.com/tr?id=700239298517091&ev=PageView&noscript=1" />` }}
                   />
-                  </>
+                  </> */}
                   {/* <!-- End Facebook Pixel Code --> */}
                   {/* <!-- Tag Manager Code --> */}
                   <script dangerouslySetInnerHTML={{
