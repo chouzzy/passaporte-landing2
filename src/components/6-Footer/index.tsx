@@ -21,6 +21,7 @@ import { PrevisaoMudanca } from "./Form/PrevisaoMudanca";
 import { ProcessoDeVistoIniciado } from "./Form/ProcessoDeVistoIniciado";
 import { AmigoFamiliarResidente } from "./Form/AmigoFamiliarResidente";
 import { SubObjetivoEmPortugalQ2 } from "./Form/SubObjetivoEmPortugalQ2";
+import axios from "axios";
 
 
 
@@ -66,11 +67,18 @@ export function Footer() {
 
    const router = useRouter()
 
-   function onSubmit(values) {
+   async function onSubmit(values) {
       setDisable(true)
       setColor('clubCigar')
       setSentText('Enviado ✔')
       const emailData = { ...values, objective, outrosTextArea, subObjective, selectedObjective, selectedObjective2, imediatamenteAcompanhado, imediatamenteAcompanhadoTextArea, amigoFamiliarResidenteRadio }
+
+      await axios.post("https://connect.pabbly.com/workflow/sendwebhookdata/IjU3NjUwNTZlMDYzMzA0MzQ1MjZkNTUzMjUxMzMi_pc", JSON.stringify(emailData))
+      .then((res) => {
+      })
+      .catch((err) => {
+        console.log(err);
+      });
 
       return new Promise(() => {
          setTimeout(() => {

@@ -4,7 +4,7 @@ import React from 'react'
 
 
 export default class MyDocument extends Document {
-   render() {  
+   render() {
 
       return (
          <Html>
@@ -33,9 +33,18 @@ export default class MyDocument extends Document {
                <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
                <link rel="shortcut icon" href="/static/img/logo.png" />
 
+               <noscript>
+                  <img
+                     height="1"
+                     width="1"
+                     style={{ display: 'none' }}
+                     src={`https://www.facebook.com/tr?id=700239298517091&ev=PageView&noscript=1`}
+                  />
+               </noscript>
                <React.Fragment>
+
                   {/* <!-- Facebook Pixel Code --> */}
-                     {/* <>
+                  {/* <>
                   <script dangerouslySetInnerHTML={{
                      __html: `!function(f,b,e,v,n,t,s)
                {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -80,7 +89,7 @@ export default class MyDocument extends Document {
                />
                <Main />
                <NextScript />
-         </body>
+            </body>
          </Html >
       )
    }
